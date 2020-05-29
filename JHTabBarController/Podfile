@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://cdn.cocoapods.org/'
+platform :ios, '11.0'
+target 'JHTabBarController' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  inhibit_all_warnings!
+  # Pods for JHTabBarController
+
+pod 'SwiftBrick'
+pod 'lottie-ios'
+  target 'JHTabBarControllerTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'JHTabBarControllerUITests' do
+    # Pods for testing
+  end
+
+end

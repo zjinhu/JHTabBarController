@@ -1,0 +1,801 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		386C0616370C743BDFAB2EF1 /* Pods_JHTabBarControllerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9A559DB67A13CF98CA90B4A /* Pods_JHTabBarControllerTests.framework */; };
+		816D44C6247FC4A40092A9CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44C5247FC4A40092A9CB /* AppDelegate.swift */; };
+		816D44C8247FC4A40092A9CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44C7247FC4A40092A9CB /* SceneDelegate.swift */; };
+		816D44CA247FC4A40092A9CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44C9247FC4A40092A9CB /* ViewController.swift */; };
+		816D44CD247FC4A40092A9CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816D44CB247FC4A40092A9CB /* Main.storyboard */; };
+		816D44CF247FC4A60092A9CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 816D44CE247FC4A60092A9CB /* Assets.xcassets */; };
+		816D44D2247FC4A60092A9CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 816D44D0247FC4A60092A9CB /* LaunchScreen.storyboard */; };
+		816D44DD247FC4A60092A9CB /* JHTabBarControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44DC247FC4A60092A9CB /* JHTabBarControllerTests.swift */; };
+		816D44E8247FC4A60092A9CB /* JHTabBarControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44E7247FC4A60092A9CB /* JHTabBarControllerUITests.swift */; };
+		816D44F7247FC6B30092A9CB /* JHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44F6247FC6B30092A9CB /* JHTabBarController.swift */; };
+		816D44F9247FC7080092A9CB /* JHTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D44F8247FC7080092A9CB /* JHTabBarItem.swift */; };
+		816D4500247FD50C0092A9CB /* tab_message_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D44FC247FD50B0092A9CB /* tab_message_animate.json */; };
+		816D4501247FD50C0092A9CB /* tab_me_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D44FD247FD50C0092A9CB /* tab_me_animate.json */; };
+		816D4502247FD50C0092A9CB /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D44FE247FD50C0092A9CB /* tab_home_animate.json */; };
+		816D4503247FD50C0092A9CB /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D44FF247FD50C0092A9CB /* tab_search_animate.json */; };
+		816D4509247FD5130092A9CB /* 05.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4504247FD5120092A9CB /* 05.json */; };
+		816D450A247FD5130092A9CB /* 02.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4505247FD5130092A9CB /* 02.json */; };
+		816D450B247FD5130092A9CB /* 01.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4506247FD5130092A9CB /* 01.json */; };
+		816D450C247FD5130092A9CB /* 04.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4507247FD5130092A9CB /* 04.json */; };
+		816D450D247FD5130092A9CB /* 03.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4508247FD5130092A9CB /* 03.json */; };
+		816D450F2480A99D0092A9CB /* JHTabBarItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D450E2480A99D0092A9CB /* JHTabBarItemContentView.swift */; };
+		DE8D0C35FB2385AF6B76E935 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB6B5E87F498FD112530D6 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework */; };
+		DF048F35C58620C7AE003F1D /* Pods_JHTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		816D44D9247FC4A60092A9CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 816D44BA247FC4A40092A9CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 816D44C1247FC4A40092A9CB;
+			remoteInfo = JHTabBarController;
+		};
+		816D44E4247FC4A60092A9CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 816D44BA247FC4A40092A9CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 816D44C1247FC4A40092A9CB;
+			remoteInfo = JHTabBarController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16124ECA3E709DB1D42C1A85 /* Pods-JHTabBarController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarController.release.xcconfig"; path = "Target Support Files/Pods-JHTabBarController/Pods-JHTabBarController.release.xcconfig"; sourceTree = "<group>"; };
+		6EE1EDFCFB7F4DDF27E66895 /* Pods-JHTabBarController-JHTabBarControllerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarController-JHTabBarControllerUITests.release.xcconfig"; path = "Target Support Files/Pods-JHTabBarController-JHTabBarControllerUITests/Pods-JHTabBarController-JHTabBarControllerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		79773D83CA4D102D0C54C591 /* Pods-JHTabBarControllerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarControllerTests.release.xcconfig"; path = "Target Support Files/Pods-JHTabBarControllerTests/Pods-JHTabBarControllerTests.release.xcconfig"; sourceTree = "<group>"; };
+		80FED797E0B1B05C8B2066D0 /* Pods-JHTabBarControllerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarControllerTests.debug.xcconfig"; path = "Target Support Files/Pods-JHTabBarControllerTests/Pods-JHTabBarControllerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		816D44C2247FC4A40092A9CB /* JHTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JHTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		816D44C5247FC4A40092A9CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		816D44C7247FC4A40092A9CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		816D44C9247FC4A40092A9CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		816D44CC247FC4A40092A9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		816D44CE247FC4A60092A9CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		816D44D1247FC4A60092A9CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		816D44D3247FC4A60092A9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816D44D8247FC4A60092A9CB /* JHTabBarControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHTabBarControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		816D44DC247FC4A60092A9CB /* JHTabBarControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBarControllerTests.swift; sourceTree = "<group>"; };
+		816D44DE247FC4A60092A9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816D44E3247FC4A60092A9CB /* JHTabBarControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JHTabBarControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		816D44E7247FC4A60092A9CB /* JHTabBarControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBarControllerUITests.swift; sourceTree = "<group>"; };
+		816D44E9247FC4A60092A9CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		816D44F6247FC6B30092A9CB /* JHTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBarController.swift; sourceTree = "<group>"; };
+		816D44F8247FC7080092A9CB /* JHTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBarItem.swift; sourceTree = "<group>"; };
+		816D44FC247FD50B0092A9CB /* tab_message_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_message_animate.json; sourceTree = "<group>"; };
+		816D44FD247FD50C0092A9CB /* tab_me_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_me_animate.json; sourceTree = "<group>"; };
+		816D44FE247FD50C0092A9CB /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
+		816D44FF247FD50C0092A9CB /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
+		816D4504247FD5120092A9CB /* 05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 05.json; sourceTree = "<group>"; };
+		816D4505247FD5130092A9CB /* 02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 02.json; path = ../../../Pupil/PupilGuard/PupilGuard/Tabbar/02.json; sourceTree = "<group>"; };
+		816D4506247FD5130092A9CB /* 01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 01.json; sourceTree = "<group>"; };
+		816D4507247FD5130092A9CB /* 04.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 04.json; sourceTree = "<group>"; };
+		816D4508247FD5130092A9CB /* 03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03.json; sourceTree = "<group>"; };
+		816D450E2480A99D0092A9CB /* JHTabBarItemContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBarItemContentView.swift; sourceTree = "<group>"; };
+		9EAB6B5E87F498FD112530D6 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarController_JHTabBarControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC7354F253E9EB36D44C87CC /* Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig"; path = "Target Support Files/Pods-JHTabBarController-JHTabBarControllerUITests/Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C68E6D703C7DC9E9FB95D0C2 /* Pods-JHTabBarController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarController.debug.xcconfig"; path = "Target Support Files/Pods-JHTabBarController/Pods-JHTabBarController.debug.xcconfig"; sourceTree = "<group>"; };
+		E9A559DB67A13CF98CA90B4A /* Pods_JHTabBarControllerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarControllerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		816D44BF247FC4A40092A9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF048F35C58620C7AE003F1D /* Pods_JHTabBarController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816D44D5247FC4A60092A9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				386C0616370C743BDFAB2EF1 /* Pods_JHTabBarControllerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816D44E0247FC4A60092A9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE8D0C35FB2385AF6B76E935 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		285CF9E4ACC92346057E8A30 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C68E6D703C7DC9E9FB95D0C2 /* Pods-JHTabBarController.debug.xcconfig */,
+				16124ECA3E709DB1D42C1A85 /* Pods-JHTabBarController.release.xcconfig */,
+				BC7354F253E9EB36D44C87CC /* Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig */,
+				6EE1EDFCFB7F4DDF27E66895 /* Pods-JHTabBarController-JHTabBarControllerUITests.release.xcconfig */,
+				80FED797E0B1B05C8B2066D0 /* Pods-JHTabBarControllerTests.debug.xcconfig */,
+				79773D83CA4D102D0C54C591 /* Pods-JHTabBarControllerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		816D44B9247FC4A40092A9CB = {
+			isa = PBXGroup;
+			children = (
+				816D44C4247FC4A40092A9CB /* JHTabBarController */,
+				816D44DB247FC4A60092A9CB /* JHTabBarControllerTests */,
+				816D44E6247FC4A60092A9CB /* JHTabBarControllerUITests */,
+				816D44C3247FC4A40092A9CB /* Products */,
+				285CF9E4ACC92346057E8A30 /* Pods */,
+				92799C8CF6489DF31B6E4884 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		816D44C3247FC4A40092A9CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				816D44C2247FC4A40092A9CB /* JHTabBarController.app */,
+				816D44D8247FC4A60092A9CB /* JHTabBarControllerTests.xctest */,
+				816D44E3247FC4A60092A9CB /* JHTabBarControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		816D44C4247FC4A40092A9CB /* JHTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				816D44C5247FC4A40092A9CB /* AppDelegate.swift */,
+				816D44C7247FC4A40092A9CB /* SceneDelegate.swift */,
+				816D44C9247FC4A40092A9CB /* ViewController.swift */,
+				816D44FE247FD50C0092A9CB /* tab_home_animate.json */,
+				816D44FD247FD50C0092A9CB /* tab_me_animate.json */,
+				816D44FC247FD50B0092A9CB /* tab_message_animate.json */,
+				816D4506247FD5130092A9CB /* 01.json */,
+				816D4505247FD5130092A9CB /* 02.json */,
+				816D4508247FD5130092A9CB /* 03.json */,
+				816D4507247FD5130092A9CB /* 04.json */,
+				816D4504247FD5120092A9CB /* 05.json */,
+				816D44FF247FD50C0092A9CB /* tab_search_animate.json */,
+				816D44F5247FC6770092A9CB /* Class */,
+				816D44CB247FC4A40092A9CB /* Main.storyboard */,
+				816D44CE247FC4A60092A9CB /* Assets.xcassets */,
+				816D44D0247FC4A60092A9CB /* LaunchScreen.storyboard */,
+				816D44D3247FC4A60092A9CB /* Info.plist */,
+			);
+			path = JHTabBarController;
+			sourceTree = "<group>";
+		};
+		816D44DB247FC4A60092A9CB /* JHTabBarControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				816D44DC247FC4A60092A9CB /* JHTabBarControllerTests.swift */,
+				816D44DE247FC4A60092A9CB /* Info.plist */,
+			);
+			path = JHTabBarControllerTests;
+			sourceTree = "<group>";
+		};
+		816D44E6247FC4A60092A9CB /* JHTabBarControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				816D44E7247FC4A60092A9CB /* JHTabBarControllerUITests.swift */,
+				816D44E9247FC4A60092A9CB /* Info.plist */,
+			);
+			path = JHTabBarControllerUITests;
+			sourceTree = "<group>";
+		};
+		816D44F5247FC6770092A9CB /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				816D44F6247FC6B30092A9CB /* JHTabBarController.swift */,
+				816D44F8247FC7080092A9CB /* JHTabBarItem.swift */,
+				816D450E2480A99D0092A9CB /* JHTabBarItemContentView.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		92799C8CF6489DF31B6E4884 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */,
+				9EAB6B5E87F498FD112530D6 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework */,
+				E9A559DB67A13CF98CA90B4A /* Pods_JHTabBarControllerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		816D44C1247FC4A40092A9CB /* JHTabBarController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 816D44EC247FC4A60092A9CB /* Build configuration list for PBXNativeTarget "JHTabBarController" */;
+			buildPhases = (
+				10D6271BBB81467B0FA90087 /* [CP] Check Pods Manifest.lock */,
+				816D44BE247FC4A40092A9CB /* Sources */,
+				816D44BF247FC4A40092A9CB /* Frameworks */,
+				816D44C0247FC4A40092A9CB /* Resources */,
+				05AC8DA083003691FABAB819 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JHTabBarController;
+			productName = JHTabBarController;
+			productReference = 816D44C2247FC4A40092A9CB /* JHTabBarController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		816D44D7247FC4A60092A9CB /* JHTabBarControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 816D44EF247FC4A60092A9CB /* Build configuration list for PBXNativeTarget "JHTabBarControllerTests" */;
+			buildPhases = (
+				191985E52D59810156AC897C /* [CP] Check Pods Manifest.lock */,
+				816D44D4247FC4A60092A9CB /* Sources */,
+				816D44D5247FC4A60092A9CB /* Frameworks */,
+				816D44D6247FC4A60092A9CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				816D44DA247FC4A60092A9CB /* PBXTargetDependency */,
+			);
+			name = JHTabBarControllerTests;
+			productName = JHTabBarControllerTests;
+			productReference = 816D44D8247FC4A60092A9CB /* JHTabBarControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		816D44E2247FC4A60092A9CB /* JHTabBarControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 816D44F2247FC4A60092A9CB /* Build configuration list for PBXNativeTarget "JHTabBarControllerUITests" */;
+			buildPhases = (
+				9B20A64AAE059BA57C1DFCB8 /* [CP] Check Pods Manifest.lock */,
+				816D44DF247FC4A60092A9CB /* Sources */,
+				816D44E0247FC4A60092A9CB /* Frameworks */,
+				816D44E1247FC4A60092A9CB /* Resources */,
+				B52A01F57976754C41AD1EB7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				816D44E5247FC4A60092A9CB /* PBXTargetDependency */,
+			);
+			name = JHTabBarControllerUITests;
+			productName = JHTabBarControllerUITests;
+			productReference = 816D44E3247FC4A60092A9CB /* JHTabBarControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		816D44BA247FC4A40092A9CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = iOS;
+				TargetAttributes = {
+					816D44C1247FC4A40092A9CB = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					816D44D7247FC4A60092A9CB = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 816D44C1247FC4A40092A9CB;
+					};
+					816D44E2247FC4A60092A9CB = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 816D44C1247FC4A40092A9CB;
+					};
+				};
+			};
+			buildConfigurationList = 816D44BD247FC4A40092A9CB /* Build configuration list for PBXProject "JHTabBarController" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 816D44B9247FC4A40092A9CB;
+			productRefGroup = 816D44C3247FC4A40092A9CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				816D44C1247FC4A40092A9CB /* JHTabBarController */,
+				816D44D7247FC4A60092A9CB /* JHTabBarControllerTests */,
+				816D44E2247FC4A60092A9CB /* JHTabBarControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		816D44C0247FC4A40092A9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816D4500247FD50C0092A9CB /* tab_message_animate.json in Resources */,
+				816D4503247FD50C0092A9CB /* tab_search_animate.json in Resources */,
+				816D44D2247FC4A60092A9CB /* LaunchScreen.storyboard in Resources */,
+				816D450C247FD5130092A9CB /* 04.json in Resources */,
+				816D4509247FD5130092A9CB /* 05.json in Resources */,
+				816D4502247FD50C0092A9CB /* tab_home_animate.json in Resources */,
+				816D450D247FD5130092A9CB /* 03.json in Resources */,
+				816D4501247FD50C0092A9CB /* tab_me_animate.json in Resources */,
+				816D450A247FD5130092A9CB /* 02.json in Resources */,
+				816D450B247FD5130092A9CB /* 01.json in Resources */,
+				816D44CF247FC4A60092A9CB /* Assets.xcassets in Resources */,
+				816D44CD247FC4A40092A9CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816D44D6247FC4A60092A9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816D44E1247FC4A60092A9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05AC8DA083003691FABAB819 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JHTabBarController/Pods-JHTabBarController-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JHTabBarController/Pods-JHTabBarController-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JHTabBarController/Pods-JHTabBarController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		10D6271BBB81467B0FA90087 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JHTabBarController-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		191985E52D59810156AC897C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JHTabBarControllerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B20A64AAE059BA57C1DFCB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JHTabBarController-JHTabBarControllerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B52A01F57976754C41AD1EB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JHTabBarController-JHTabBarControllerUITests/Pods-JHTabBarController-JHTabBarControllerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JHTabBarController-JHTabBarControllerUITests/Pods-JHTabBarController-JHTabBarControllerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JHTabBarController-JHTabBarControllerUITests/Pods-JHTabBarController-JHTabBarControllerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		816D44BE247FC4A40092A9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816D44CA247FC4A40092A9CB /* ViewController.swift in Sources */,
+				816D450F2480A99D0092A9CB /* JHTabBarItemContentView.swift in Sources */,
+				816D44F9247FC7080092A9CB /* JHTabBarItem.swift in Sources */,
+				816D44F7247FC6B30092A9CB /* JHTabBarController.swift in Sources */,
+				816D44C6247FC4A40092A9CB /* AppDelegate.swift in Sources */,
+				816D44C8247FC4A40092A9CB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816D44D4247FC4A60092A9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816D44DD247FC4A60092A9CB /* JHTabBarControllerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816D44DF247FC4A60092A9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				816D44E8247FC4A60092A9CB /* JHTabBarControllerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		816D44DA247FC4A60092A9CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 816D44C1247FC4A40092A9CB /* JHTabBarController */;
+			targetProxy = 816D44D9247FC4A60092A9CB /* PBXContainerItemProxy */;
+		};
+		816D44E5247FC4A60092A9CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 816D44C1247FC4A40092A9CB /* JHTabBarController */;
+			targetProxy = 816D44E4247FC4A60092A9CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		816D44CB247FC4A40092A9CB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				816D44CC247FC4A40092A9CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		816D44D0247FC4A60092A9CB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				816D44D1247FC4A60092A9CB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		816D44EA247FC4A60092A9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		816D44EB247FC4A60092A9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		816D44ED247FC4A60092A9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C68E6D703C7DC9E9FB95D0C2 /* Pods-JHTabBarController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JHTabBarController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.JHTabBarController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		816D44EE247FC4A60092A9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16124ECA3E709DB1D42C1A85 /* Pods-JHTabBarController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JHTabBarController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.JHTabBarController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		816D44F0247FC4A60092A9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80FED797E0B1B05C8B2066D0 /* Pods-JHTabBarControllerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JHTabBarControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.JHTabBarControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JHTabBarController.app/JHTabBarController";
+			};
+			name = Debug;
+		};
+		816D44F1247FC4A60092A9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79773D83CA4D102D0C54C591 /* Pods-JHTabBarControllerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JHTabBarControllerTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.JHTabBarControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JHTabBarController.app/JHTabBarController";
+			};
+			name = Release;
+		};
+		816D44F3247FC4A60092A9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC7354F253E9EB36D44C87CC /* Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JHTabBarControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.JHTabBarControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JHTabBarController;
+			};
+			name = Debug;
+		};
+		816D44F4247FC4A60092A9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EE1EDFCFB7F4DDF27E66895 /* Pods-JHTabBarController-JHTabBarControllerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JHTabBarControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hu.JHTabBarControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JHTabBarController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		816D44BD247FC4A40092A9CB /* Build configuration list for PBXProject "JHTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				816D44EA247FC4A60092A9CB /* Debug */,
+				816D44EB247FC4A60092A9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		816D44EC247FC4A60092A9CB /* Build configuration list for PBXNativeTarget "JHTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				816D44ED247FC4A60092A9CB /* Debug */,
+				816D44EE247FC4A60092A9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		816D44EF247FC4A60092A9CB /* Build configuration list for PBXNativeTarget "JHTabBarControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				816D44F0247FC4A60092A9CB /* Debug */,
+				816D44F1247FC4A60092A9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		816D44F2247FC4A60092A9CB /* Build configuration list for PBXNativeTarget "JHTabBarControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				816D44F3247FC4A60092A9CB /* Debug */,
+				816D44F4247FC4A60092A9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 816D44BA247FC4A40092A9CB /* Project object */;
+}

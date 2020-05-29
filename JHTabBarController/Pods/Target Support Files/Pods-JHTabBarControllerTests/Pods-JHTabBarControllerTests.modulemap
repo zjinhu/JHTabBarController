@@ -1,0 +1,6 @@
+framework module Pods_JHTabBarControllerTests {
+  umbrella header "Pods-JHTabBarControllerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
