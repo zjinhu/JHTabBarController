@@ -7,31 +7,17 @@
 //
 
 import UIKit 
-class JHTabBarController: UITabBarController {
-    
-    /// 自定义Item的数组
-//    open var jhItems: [JHTabBarItem] {
-//        return tabBar.items as? [JHTabBarItem] ?? []
-//    }
-    
+public class JHTabBarController: UITabBarController {
+
     /// vc数组
-    open override var viewControllers: [UIViewController]? {
+    public override var viewControllers: [UIViewController]? {
         didSet {
             initializeContainers()
         }
     }
-    
-//    /// 设置VC数组
-//    /// - Parameters:
-//    ///   - viewControllers: vc数组
-//    ///   - animated: 是否有动画
-//    open override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
-//        super.setViewControllers(viewControllers, animated: animated)
-//        initializeContainers()
-//    }
-    
+
     /// 选中VC
-    open override var selectedViewController: UIViewController? {
+    public override var selectedViewController: UIViewController? {
         willSet {
             guard let vc = newValue,
                 let index = viewControllers?.firstIndex(of: vc) else { return }
@@ -42,7 +28,7 @@ class JHTabBarController: UITabBarController {
     /// item上的容器view数组
     private(set) var containers: [UIView] = []
     
-    open override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         initializeContainers()
     }
@@ -51,7 +37,7 @@ class JHTabBarController: UITabBarController {
     /// - Parameters:
     ///   - size:
     ///   - coordinator:
-    override open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { (transitionCoordinatorContext) -> Void in
             self.layoutContainers()
         }, completion: { (transitionCoordinatorContext) -> Void in
@@ -106,7 +92,7 @@ class JHTabBarController: UITabBarController {
     /// - Parameter containers: 容器视图数组
     private func createCustomIcons(containers: [UIView]) {
         guard let items = tabBar.items as? [JHTabBarItem] else {
-            fatalError("items must inherit RAMAnimatedTabBarItem")
+            fatalError("items must inherit JHTabBarItem")
         }
 
         for (index, item) in items.enumerated() {
@@ -184,10 +170,10 @@ extension JHTabBarController {
      - parameter from: Index for unselected animation
      - parameter to:   Index for selected animation
      */
-    open func setSelectIndex(from: Int, to: Int) {
+    public func setSelectIndex(from: Int, to: Int) {
         selectedIndex = to
         guard let items = tabBar.items as? [JHTabBarItem] else {
-            fatalError("items must inherit RAMAnimatedTabBarItem")
+            fatalError("items must inherit JHTabBarItem")
         }
 
         let previousItem =  items[from]

@@ -130,7 +130,7 @@ open class JHTabBarItemContentView: UIView {
     }()
     
     #if canImport(Lottie)
-    let lottieView: AnimationView = {
+    open var lottieView: AnimationView = {
         let lottieView = AnimationView()
         lottieView.contentMode = .scaleAspectFit
         return lottieView
@@ -246,7 +246,7 @@ open class JHTabBarItemContentView: UIView {
     }
 
     // MARK: - INTERNAL METHODS
-    func select(animated: Bool = true) {
+    open func select(animated: Bool = true) {
         selected = true
         updateDisplay()
         #if canImport(Lottie)
@@ -254,7 +254,7 @@ open class JHTabBarItemContentView: UIView {
         #endif
     }
 
-    func deselect(animated: Bool = true) {
+    open func deselect(animated: Bool = true) {
         selected = false
         updateDisplay()
         #if canImport(Lottie)

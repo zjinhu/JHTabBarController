@@ -19,38 +19,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-//        let v1 = ViewController()
-//        let item1 = JHTabBarItem()
-//        item1.image = UIImage.init(named: "tab_chat_nor")
-//        item1.selectedImage = UIImage.init(named: "tab_chat_hi")
-//        item1.title = "123"
-//        v1.tabBarItem = item1
-//        let v2 = ViewController()
-//        let item2 = JHTabBarItem()
-//        item2.image = UIImage.init(named: "tab_home_nor")
-//        item2.selectedImage = UIImage.init(named: "tab_home_hi")
-//        v2.tabBarItem = item2
-//        let v3 = ViewController()
-//        let item3 = JHTabBarItem()
-//        item3.image = UIImage.init(named: "tab_mine_nor")
-//        item3.selectedImage = UIImage.init(named: "tab_mine_hi")
-//        item3.lottieName = "03"
-//        v3.tabBarItem = item3
-//        let nav1 = UINavigationController.init(rootViewController: v1)
-//        let nav2 = UINavigationController.init(rootViewController: v2)
-//        let nav3 = UINavigationController.init(rootViewController: v3)
-//        
-//        let tab = JHTabBarController()
-//        
-//        tab.viewControllers = [nav1,nav2,nav3]
-//        tab.setSelectIndex(from: 0, to: 2)
-//        
-//        let windowScene = scene as! UIWindowScene
-//        window? = UIWindow.init(windowScene: windowScene)
-//        window?.frame = windowScene.coordinateSpace.bounds
-//        window?.makeKeyAndVisible()
-//        window?.rootViewController = tab
-//        window?.backgroundColor = .white
+        
+        /**  放开这段注释会使用纯代码方式创建tabbarcontroller
+         let v1 = ViewController()
+         let item1 = JHTabBarItem()
+         item1.image = UIImage.init(named: "tab_chat_nor")
+         item1.selectedImage = UIImage.init(named: "tab_chat_hi")
+         item1.title = "123"
+         v1.tabBarItem = item1
+         let v2 = ViewController()
+         let item2 = JHTabBarItem()
+         item2.image = UIImage.init(named: "tab_home_nor")
+         item2.selectedImage = UIImage.init(named: "tab_home_hi")
+         v2.tabBarItem = item2
+         let v3 = ViewController()
+         let item3 = JHTabBarItem()
+         item3.image = UIImage.init(named: "tab_mine_nor")
+         item3.selectedImage = UIImage.init(named: "tab_mine_hi")
+         item3.lottieName = "03"
+         v3.tabBarItem = item3
+         let nav1 = UINavigationController.init(rootViewController: v1)
+         let nav2 = UINavigationController.init(rootViewController: v2)
+         let nav3 = UINavigationController.init(rootViewController: v3)
+         
+         let tab = JHTabBarController()
+         
+         tab.viewControllers = [nav1,nav2,nav3]
+         tab.setSelectIndex(from: 0, to: 2)
+         
+         let windowScene = scene as! UIWindowScene
+         window? = UIWindow.init(windowScene: windowScene)
+         window?.frame = windowScene.coordinateSpace.bounds
+         window?.makeKeyAndVisible()
+         window?.rootViewController = tab
+         window?.backgroundColor = .white
+         */
+
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
