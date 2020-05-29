@@ -14,7 +14,8 @@ lottie imageView同时存在如果有Lottie仓库会用Lottie隐藏ImageView，�
 ```
 支持ios11以上版本，swift5支持
 pod ‘ JHTabBarController’
-```## 使用
+```
+## 使用
 
 ```
 var image  					默认icon
@@ -27,7 +28,9 @@ var selectedTextColor			标题选中颜色
 var renderingMode: Bool 		icon是否使用图片自带颜色
 var iconColor					icon使用自定义颜色  默认颜色
 var selectedIconColor			icon使用自定义颜色  选中颜色
+
 ```
+
 纯代码创建：
 ```
         let v1 = ViewController()
