@@ -13,7 +13,7 @@ lottie imageView同时存在如果有Lottie仓库会用Lottie隐藏ImageView，�
 ## 安装
 ```
 支持ios11以上版本，swift5支持
-pod ‘SwiftyRefresh’
+pod ‘ JHTabBarController’
 ```## 使用
 
 ```
