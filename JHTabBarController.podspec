@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
     end
 
   s.subspec 'Lottie' do |ss| 
-      ss.dependency 'JHTabBarController/Core'
+      ss.source_files = 'JHTabBarController/JHTabBarController/Class/**/*.swift'
       ss.dependency 'Lottie'
     end
     
