@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JHTabBarController'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'JHTabBarController.'
  
   s.description      = <<-DESC
@@ -18,7 +18,16 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.frameworks   = "UIKit", "Foundation" 
   s.dependency 'SnapKit'
-  s.source_files = 'JHTabBarController/JHTabBarController/Class/**/*.swift'  
+ 
+  s.subspec 'Core' do |ss|
+      ss.source_files = 'JHTabBarController/JHTabBarController/Class/**/*.swift' 
+    end
 
+  s.subspec 'Lottie' do |ss| 
+      ss.dependency 'JHTabBarController/Core'
+      ss.dependency 'Lottie'
+    end
+    
+  s.default_subspec = 'Core'
 
 end
