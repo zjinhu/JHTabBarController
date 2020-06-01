@@ -39,3 +39,25 @@ public class JHTabBarItem: UITabBarItem {
     }
 
 }
+
+// MARK: Custom Badge
+extension JHTabBarItem {
+
+    /// The current badge value
+    @IBInspectable public override var badgeValue: String? {
+        get {
+            return contentView?.badgeValue
+        }
+        set(newValue) {
+            contentView?.badgeValue = newValue
+        }
+    }
+    
+    @IBInspectable public override var badgeColor: UIColor? {
+        didSet {
+            if let _ = badgeColor {
+                contentView?.badgeColor = badgeColor
+            }
+        }
+    }
+}

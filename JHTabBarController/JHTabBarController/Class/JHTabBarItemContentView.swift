@@ -129,6 +129,38 @@ open class JHTabBarItemContentView: UIView {
         return titleLabel
     }()
     
+    open var badgeView: UIButton = {
+        let badgeView = UIButton.init()
+        badgeView.backgroundColor = .red
+        badgeView.titleLabel?.textColor = .white
+        badgeView.titleLabel?.textAlignment = .center
+        badgeView.titleLabel?.font = .systemFont(ofSize: 13)
+        badgeView.layer.cornerRadius = 9
+        badgeView.clipsToBounds = true
+        badgeView.isUserInteractionEnabled = false
+        return badgeView
+    }()
+    
+    /// Badge value
+    open var badgeValue: String? {
+        didSet {
+            if let _ = badgeValue {
+                badgeView.setTitle(badgeValue, for: .normal)
+                badgeView.isHidden = false
+            } else {
+                badgeView.isHidden = true
+            }
+            layoutBadge()
+        }
+    }
+    open var badgeColor: UIColor? {
+        didSet {
+            if let _ = badgeColor {
+                badgeView.backgroundColor = badgeColor
+            }
+        }
+    }
+    
     #if canImport(Lottie)
     open var lottieView: AnimationView = {
         let lottieView = AnimationView()
@@ -149,85 +181,139 @@ open class JHTabBarItemContentView: UIView {
         addSubview(lottieView)
         #endif
 
+        addSubview(badgeView)
+        badgeView.isHidden = true
+        
         titleLabel.textColor = textColor
         imageView.tintColor = iconColor
         backgroundColor = backColor
     }
     
+    func layoutBadge() {
+        let textSize = badgeView.titleLabel?.sizeThatFits(CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+
+        badgeView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(1)
+            make.centerX.equalToSuperview().offset(15)
+            make.width.equalTo(max(18.0, (textSize?.width ?? 18) + 10 ))
+            make.height.equalTo(18)
+        }
+    }
     open override func layoutSubviews() {
         super.layoutSubviews()
-        let s: CGFloat = UIScreen.main.scale == 3.0 ? 24.0 : 20.0
+        
+        var iconSize = 24
+        var isLandscape = false
+        switch UIApplication.shared.statusBarOrientation {
+        case .portrait, .portraitUpsideDown:
+            iconSize = 24
+            isLandscape = false
+        default:
+            iconSize = 20
+            isLandscape = true
+        }
+
         titleLabel.font = .systemFont(ofSize: textFontSize)
         
         if let t = title, t.count > 0, image != nil, let l = lottieName, l.count > 0{
-            imageView.snp.makeConstraints { (make) in
-                make.bottom.equalTo(self.snp.centerY).offset(4)
-                make.centerX.equalToSuperview()
-                make.width.height.equalTo(s)
+            imageView.snp.remakeConstraints { (make) in
+                if isLandscape {
+                    make.centerX.centerY.equalToSuperview()
+                    make.width.height.equalTo(iconSize)
+                }else{
+                    make.bottom.equalTo(self.snp.centerY).offset(4)
+                    make.centerX.equalToSuperview()
+                    make.width.height.equalTo(iconSize)
+                }
             }
-            titleLabel.snp.makeConstraints { (make) in
-                make.top.equalTo(imageView.snp.bottom).offset(3)
-                make.centerX.equalToSuperview()
+            titleLabel.snp.remakeConstraints { (make) in
+                if isLandscape {
+                    make.left.equalTo(imageView.snp.right).offset(4)
+                    make.centerY.equalToSuperview()
+                }else{
+                    make.top.equalTo(imageView.snp.bottom).offset(3)
+                    make.centerX.equalToSuperview()
+                }
             }
             #if canImport(Lottie)
             imageView.isHidden = true
-            lottieView.snp.makeConstraints { (make) in
+            lottieView.snp.remakeConstraints { (make) in
                 make.edges.equalTo(imageView)
             }
             #endif
         }else if let t = title, t.count > 0, image != nil{
-            imageView.snp.makeConstraints { (make) in
-                make.bottom.equalTo(self.snp.centerY).offset(4)
-                make.centerX.equalToSuperview()
-                make.width.height.equalTo(s)
+            imageView.snp.remakeConstraints { (make) in
+                if isLandscape {
+                    make.centerX.centerY.equalToSuperview()
+                    make.width.height.equalTo(iconSize)
+                }else{
+                    make.bottom.equalTo(self.snp.centerY).offset(4)
+                    make.centerX.equalToSuperview()
+                    make.width.height.equalTo(iconSize)
+                }
             }
-            titleLabel.snp.makeConstraints { (make) in
-                make.top.equalTo(imageView.snp.bottom).offset(3)
-                make.centerX.equalToSuperview()
+            titleLabel.snp.remakeConstraints { (make) in
+                if isLandscape {
+                    make.left.equalTo(imageView.snp.right).offset(4)
+                    make.centerY.equalToSuperview()
+                }else{
+                    make.top.equalTo(imageView.snp.bottom).offset(3)
+                    make.centerX.equalToSuperview()
+                }
             }
         }else if let l = lottieName, l.count > 0, let t = title, t.count > 0{
             #if canImport(Lottie)
             titleLabel.font = .systemFont(ofSize: textFontSize)
-            lottieView.snp.makeConstraints { (make) in
-                make.bottom.equalTo(self.snp.centerY).offset(4)
-                make.centerX.equalToSuperview()
-                make.width.height.equalTo(s)
+            lottieView.snp.remakeConstraints { (make) in
+                if isLandscape {
+                    make.centerX.centerY.equalToSuperview()
+                    make.width.height.equalTo(iconSize)
+                }else{
+                    make.bottom.equalTo(self.snp.centerY).offset(4)
+                    make.centerX.equalToSuperview()
+                    make.width.height.equalTo(iconSize)
+                }
             }
-            titleLabel.snp.makeConstraints { (make) in
-                make.top.equalTo(lottieView.snp.bottom).offset(3)
-                make.centerX.equalToSuperview()
+            titleLabel.snp.remakeConstraints { (make) in
+                if isLandscape {
+                    make.left.equalTo(imageView.snp.right).offset(4)
+                    make.centerY.equalToSuperview()
+                }else{
+                    make.top.equalTo(imageView.snp.bottom).offset(3)
+                    make.centerX.equalToSuperview()
+                }
             }
             #else
-            titleLabel.snp.makeConstraints { (make) in
+            titleLabel.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
             }
             #endif
         }else if let l = lottieName, l.count > 0, image != nil{
             #if canImport(Lottie)
-            lottieView.snp.makeConstraints { (make) in
+            lottieView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
-                make.width.height.equalTo(30)
+                make.width.height.equalTo(28)
             }
             #else
-            imageView.snp.makeConstraints { (make) in
+            imageView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
-                make.width.height.equalTo(30)
+                make.width.height.equalTo(28)
             }
             #endif
         }else if let l = lottieName, l.count > 0{
             #if canImport(Lottie)
-            lottieView.snp.makeConstraints { (make) in
+            lottieView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
-                make.width.height.equalTo(30)
+                make.width.height.equalTo(28)
             }
             #endif
         }else if image != nil{
-            imageView.snp.makeConstraints { (make) in
+            imageView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
-                make.width.height.equalTo(30)
+                make.width.height.equalTo(28)
             }
         }else if let t = title, t.count > 0{
-            titleLabel.snp.makeConstraints { (make) in
+            titleLabel.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
             }
         }

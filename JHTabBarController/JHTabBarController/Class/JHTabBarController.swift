@@ -74,16 +74,18 @@ public class JHTabBarController: UITabBarController {
     
     /// 设置自定义item的frame
     private func layoutContainers() {
+
         let itemWidth = tabBar.bounds.width / CGFloat(containers.count)
         let isRTL = tabBar.userInterfaceLayoutDirection == .rightToLeft
         
         for (index, container) in containers.enumerated() {
             let i = isRTL ? (containers.count - 1 - index) : index
-            let frame = CGRect(x: itemWidth * CGFloat(i), y: 0, width: itemWidth, height: Theme.tabBarHeight)
+            let frame = CGRect(x: itemWidth * CGFloat(i), y: 0, width: itemWidth, height: tabBar.bounds.height)
             container.frame = frame
             
             if let item = tabBar.items?.at(index) as? JHTabBarItem {
                 item.contentView?.frame = container.bounds
+                item.contentView?.layoutSubviews()
             }
         }
     }
@@ -184,16 +186,6 @@ extension JHTabBarController {
 
     }
 }
-
-
-extension JHTabBarController {
-    enum Theme {
-        public static let tabBarHeight: CGFloat = 49
-        public static let defaultTitleVerticalOffset: CGFloat = 10
-        public static let defaultIconVerticalOffset: CGFloat = -5
-    }
-}
-
 
 extension UIView {
     var userInterfaceLayoutDirection: UIUserInterfaceLayoutDirection {
