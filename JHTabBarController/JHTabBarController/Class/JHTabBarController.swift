@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SwiftBrick
+
 public class JHTabBarController: UITabBarController {
 
     /// vc数组
@@ -33,7 +33,7 @@ public class JHTabBarController: UITabBarController {
         super.viewDidLoad()
         initializeContainers()
     }
-
+ 
     /// 横竖屏切换监听刷新frame
     /// - Parameters:
     ///   - size:
@@ -58,7 +58,6 @@ public class JHTabBarController: UITabBarController {
         
         for index in 0 ..< items.count {
             let viewContainer = UIView()
-//            viewContainer.backgroundColor = UIColor.random
             viewContainer.isExclusiveTouch = true
             viewContainer.tag = index
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemTap))

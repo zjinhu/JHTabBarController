@@ -28,21 +28,6 @@ public class JHTabBarItem: UITabBarItem {
     public var bgDefaultColor: UIColor = UIColor.clear // background color
     public var bgSelectedColor: UIColor = UIColor.clear
     
-    
-    public init(_ contentView: JHTabBarItemContentView = JHTabBarItemContentView()) {
-        super.init()
-        self.contentView = contentView
-    }
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.contentView = JHTabBarItemContentView()
-    }
-
-}
-
-// MARK: Custom Badge
-extension JHTabBarItem {
-
     /// The current badge value
     @IBInspectable public override var badgeValue: String? {
         get {
@@ -60,4 +45,14 @@ extension JHTabBarItem {
             }
         }
     }
+    
+    public init(_ contentView: JHTabBarItemContentView = JHTabBarItemContentView()) {
+        super.init()
+        self.contentView = contentView
+    }
+    public required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.contentView = JHTabBarItemContentView()
+    }
+
 }
