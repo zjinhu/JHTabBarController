@@ -6,7 +6,8 @@
 //  Copyright © 2020 iOS. All rights reserved.
 //
 
-import UIKit 
+import UIKit
+import SwiftBrick
 public class JHTabBarController: UITabBarController {
 
     /// vc数组
@@ -32,14 +33,14 @@ public class JHTabBarController: UITabBarController {
         super.viewDidLoad()
         initializeContainers()
     }
-    
+
     /// 横竖屏切换监听刷新frame
     /// - Parameters:
     ///   - size:
     ///   - coordinator:
     override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { (transitionCoordinatorContext) -> Void in
-            self.layoutContainers()
+        coordinator.animate(alongsideTransition: { [weak self] (transitionCoordinatorContext) -> Void in
+            self?.layoutContainers()
         }, completion: { (transitionCoordinatorContext) -> Void in
             //refresh view once rotation is completed not in will transition as it returns incorrect frame size.Refresh here
         })
@@ -57,6 +58,7 @@ public class JHTabBarController: UITabBarController {
         
         for index in 0 ..< items.count {
             let viewContainer = UIView()
+//            viewContainer.backgroundColor = UIColor.random
             viewContainer.isExclusiveTouch = true
             viewContainer.tag = index
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(itemTap))
@@ -76,11 +78,20 @@ public class JHTabBarController: UITabBarController {
     private func layoutContainers() {
 
         let itemWidth = tabBar.bounds.width / CGFloat(containers.count)
+        
+        var itemHeight = 49
+        switch UIApplication.shared.statusBarOrientation {
+        case .portrait, .portraitUpsideDown:
+            itemHeight = 49
+        default:
+            itemHeight = IS_IOS11() && IS_Little() ? 32 : 49
+        }
+        
         let isRTL = tabBar.userInterfaceLayoutDirection == .rightToLeft
         
         for (index, container) in containers.enumerated() {
             let i = isRTL ? (containers.count - 1 - index) : index
-            let frame = CGRect(x: itemWidth * CGFloat(i), y: 0, width: itemWidth, height: tabBar.bounds.height)
+            let frame = CGRect(x: itemWidth * CGFloat(i), y: 0, width: itemWidth, height: CGFloat(itemHeight))
             container.frame = frame
             
             if let item = tabBar.items?.at(index) as? JHTabBarItem {
@@ -165,7 +176,9 @@ public class JHTabBarController: UITabBarController {
 
 
 extension JHTabBarController {
-
+    private func IS_IOS11() -> Bool { return (UIDevice.current.systemVersion as NSString).doubleValue >= 11.0 }
+    
+    private func IS_Little() -> Bool { return UIScreen.main.bounds.height < 400 }
     /**
      Selected UITabBarItem with animaton
 
