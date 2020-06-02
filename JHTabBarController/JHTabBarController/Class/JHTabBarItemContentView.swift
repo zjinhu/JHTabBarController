@@ -17,54 +17,50 @@ public enum JHTabBarItemContentMode : Int {
     
     case alwaysTemplate // Always set the image as a template image size
 }
-open class JHTabBarItemContentView: UIView {
+open class JHTabBarItemContentView: UIControl {
 
     /// 设置contentView的偏移
     open var insets = UIEdgeInsets.zero
-    
-    /// 是否被选中
-    open var selected = false
-
 
     /// 文字颜色
     open var textColor = UIColor(white: 0.57254902, alpha: 1.0) {
         didSet {
-            if !selected { titleLabel.textColor = textColor }
+            if !isSelected { titleLabel.textColor = textColor }
         }
     }
     
     /// 高亮时文字颜色
     open var highlightTextColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
         didSet {
-            if selected { titleLabel.textColor = highlightIconColor }
+            if isSelected { titleLabel.textColor = highlightIconColor }
         }
     }
     
     /// icon颜色
     open var iconColor = UIColor(white: 0.57254902, alpha: 1.0) {
         didSet {
-            if !selected { imageView.tintColor = iconColor }
+            if !isSelected { imageView.tintColor = iconColor }
         }
     }
     
     /// 高亮时icon颜色
     open var highlightIconColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
         didSet {
-            if selected { imageView.tintColor = highlightIconColor }
+            if isSelected { imageView.tintColor = highlightIconColor }
         }
     }
     
     /// 背景颜色
     open var backColor = UIColor.clear {
         didSet {
-            if !selected { backgroundColor = backColor }
+            if !isSelected { backgroundColor = backColor }
         }
     }
     
     /// 高亮时背景颜色
     open var highlightBackColor = UIColor.clear {
         didSet {
-            if selected { backgroundColor = highlightBackColor }
+            if isSelected { backgroundColor = highlightBackColor }
         }
     }
     
@@ -103,13 +99,13 @@ open class JHTabBarItemContentView: UIView {
     /// Icon imageView's image
     open var image: UIImage? {
         didSet {
-            if !selected { self.updateDisplay() }
+            if !isSelected { self.updateDisplay() }
         }
     }
 
     open var selectedImage: UIImage? {
         didSet {
-            if selected { self.updateDisplay() }
+            if isSelected { self.updateDisplay() }
         }
     }
     
@@ -165,6 +161,7 @@ open class JHTabBarItemContentView: UIView {
     open var lottieView: AnimationView = {
         let lottieView = AnimationView()
         lottieView.contentMode = .scaleAspectFit
+        lottieView.isUserInteractionEnabled = false
         return lottieView
     }()
     #endif
@@ -172,7 +169,6 @@ open class JHTabBarItemContentView: UIView {
     // MARK: -
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        self.isUserInteractionEnabled = false
         
         addSubview(imageView)
         addSubview(titleLabel)
@@ -325,15 +321,15 @@ open class JHTabBarItemContentView: UIView {
     }
 
     open func updateDisplay() {
-        imageView.image = (selected ? (selectedImage ?? image) : image)?.withRenderingMode(renderingMode)
-        imageView.tintColor = selected ? highlightIconColor : iconColor
-        titleLabel.textColor = selected ? highlightTextColor : textColor
-        backgroundColor = selected ? highlightBackColor : backColor
+        imageView.image = (isSelected ? (selectedImage ?? image) : image)?.withRenderingMode(renderingMode)
+        imageView.tintColor = isSelected ? highlightIconColor : iconColor
+        titleLabel.textColor = isSelected ? highlightTextColor : textColor
+        backgroundColor = isSelected ? highlightBackColor : backColor
     }
 
     // MARK: - INTERNAL METHODS
     open func select(animated: Bool = true) {
-        selected = true
+        isSelected = true
         updateDisplay()
         #if canImport(Lottie)
         lottieView.play()
@@ -341,7 +337,7 @@ open class JHTabBarItemContentView: UIView {
     }
 
     open func deselect(animated: Bool = true) {
-        selected = false
+        isSelected = false
         updateDisplay()
         #if canImport(Lottie)
         lottieView.stop()

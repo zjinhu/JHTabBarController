@@ -54,5 +54,20 @@ public class JHTabBarItem: UITabBarItem {
         super.init(coder: aDecoder)
         self.contentView = JHTabBarItemContentView()
     }
+    
+    func configContentView() {
+        contentView?.renderingMode = renderingMode ? .alwaysTemplate : .alwaysOriginal
+        contentView?.image = image
+        contentView?.selectedImage = selectedImage
+        contentView?.iconColor = iconColor
+        contentView?.highlightIconColor = selectedIconColor
+        
+        contentView?.title = title
+        contentView?.textColor = textColor
+        contentView?.highlightTextColor = selectedTextColor
+        contentView?.textFontSize = textFontSize
+        contentView?.lottieName = lottieName
+        contentView?.layoutSubviews()
+    }
 
 }

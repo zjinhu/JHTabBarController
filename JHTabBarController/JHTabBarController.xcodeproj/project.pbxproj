@@ -29,6 +29,7 @@
 		816D450D247FD5130092A9CB /* 03.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4508247FD5130092A9CB /* 03.json */; };
 		816D450F2480A99D0092A9CB /* JHTabBarItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816D450E2480A99D0092A9CB /* JHTabBarItemContentView.swift */; };
 		81F663732484E05E00609EB2 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F663722484E05E00609EB2 /* Tabbar.swift */; };
+		81F663752485F3F400609EB2 /* JHTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F663742485F3F400609EB2 /* JHTabBar.swift */; };
 		DE8D0C35FB2385AF6B76E935 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB6B5E87F498FD112530D6 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework */; };
 		DF048F35C58620C7AE003F1D /* Pods_JHTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		816D4508247FD5130092A9CB /* 03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03.json; sourceTree = "<group>"; };
 		816D450E2480A99D0092A9CB /* JHTabBarItemContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBarItemContentView.swift; sourceTree = "<group>"; };
 		81F663722484E05E00609EB2 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
+		81F663742485F3F400609EB2 /* JHTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTabBar.swift; sourceTree = "<group>"; };
 		9EAB6B5E87F498FD112530D6 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarController_JHTabBarControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7354F253E9EB36D44C87CC /* Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig"; path = "Target Support Files/Pods-JHTabBarController-JHTabBarControllerUITests/Pods-JHTabBarController-JHTabBarControllerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				816D44F6247FC6B30092A9CB /* JHTabBarController.swift */,
+				81F663742485F3F400609EB2 /* JHTabBar.swift */,
 				816D44F8247FC7080092A9CB /* JHTabBarItem.swift */,
 				816D450E2480A99D0092A9CB /* JHTabBarItemContentView.swift */,
 			);
@@ -470,6 +473,7 @@
 				816D44F7247FC6B30092A9CB /* JHTabBarController.swift in Sources */,
 				816D44C6247FC4A40092A9CB /* AppDelegate.swift in Sources */,
 				816D44C8247FC4A40092A9CB /* SceneDelegate.swift in Sources */,
+				81F663752485F3F400609EB2 /* JHTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,9 +36,9 @@ class Tabbar {
         let nav3 = UINavigationController.init(rootViewController: v3)
         
         let tab = JHTabBarController()
+        tab.viewControllers = [nav1,nav2,nav3] 
+        tab.selectedIndex = 2
         
-        tab.viewControllers = [nav1,nav2,nav3]
-        tab.setSelectIndex(from: 0, to: 2)
         return tab
     }
 }
