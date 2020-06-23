@@ -23,7 +23,6 @@
 		816D4502247FD50C0092A9CB /* tab_home_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D44FE247FD50C0092A9CB /* tab_home_animate.json */; };
 		816D4503247FD50C0092A9CB /* tab_search_animate.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D44FF247FD50C0092A9CB /* tab_search_animate.json */; };
 		816D4509247FD5130092A9CB /* 05.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4504247FD5120092A9CB /* 05.json */; };
-		816D450A247FD5130092A9CB /* 02.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4505247FD5130092A9CB /* 02.json */; };
 		816D450B247FD5130092A9CB /* 01.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4506247FD5130092A9CB /* 01.json */; };
 		816D450C247FD5130092A9CB /* 04.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4507247FD5130092A9CB /* 04.json */; };
 		816D450D247FD5130092A9CB /* 03.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4508247FD5130092A9CB /* 03.json */; };
@@ -77,7 +76,6 @@
 		816D44FE247FD50C0092A9CB /* tab_home_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_home_animate.json; sourceTree = "<group>"; };
 		816D44FF247FD50C0092A9CB /* tab_search_animate.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tab_search_animate.json; sourceTree = "<group>"; };
 		816D4504247FD5120092A9CB /* 05.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 05.json; sourceTree = "<group>"; };
-		816D4505247FD5130092A9CB /* 02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = 02.json; path = ../../../Pupil/PupilGuard/PupilGuard/Tabbar/02.json; sourceTree = "<group>"; };
 		816D4506247FD5130092A9CB /* 01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 01.json; sourceTree = "<group>"; };
 		816D4507247FD5130092A9CB /* 04.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 04.json; sourceTree = "<group>"; };
 		816D4508247FD5130092A9CB /* 03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03.json; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				816D44FD247FD50C0092A9CB /* tab_me_animate.json */,
 				816D44FC247FD50B0092A9CB /* tab_message_animate.json */,
 				816D4506247FD5130092A9CB /* 01.json */,
-				816D4505247FD5130092A9CB /* 02.json */,
 				816D4508247FD5130092A9CB /* 03.json */,
 				816D4507247FD5130092A9CB /* 04.json */,
 				816D4504247FD5120092A9CB /* 05.json */,
@@ -335,7 +332,6 @@
 				816D4502247FD50C0092A9CB /* tab_home_animate.json in Resources */,
 				816D450D247FD5130092A9CB /* 03.json in Resources */,
 				816D4501247FD50C0092A9CB /* tab_me_animate.json in Resources */,
-				816D450A247FD5130092A9CB /* 02.json in Resources */,
 				816D450B247FD5130092A9CB /* 01.json in Resources */,
 				816D44CF247FC4A60092A9CB /* Assets.xcassets in Resources */,
 				816D44CD247FC4A40092A9CB /* Main.storyboard in Resources */,
