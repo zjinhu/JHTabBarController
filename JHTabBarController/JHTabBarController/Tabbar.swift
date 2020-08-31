@@ -12,23 +12,25 @@ class Tabbar {
     static func creatTabbar() -> JHTabBarController{
         let v1 = ViewController()
         
-        let item1 = JHTabBarItem()
+        let item1 = JHTabBarItem(CustomTab())
         item1.image = UIImage.init(named: "tab_chat_nor")
         item1.selectedImage = UIImage.init(named: "tab_chat_hi")
         item1.title = "123"
         v1.tabBarItem = item1
         
         let v2 = ViewController()
-        let item2 = JHTabBarItem()
+        let item2 = JHTabBarItem(CustomTab())
         item2.image = UIImage.init(named: "tab_home_nor")
         item2.selectedImage = UIImage.init(named: "tab_home_hi")
+        item2.title = "123"
         v2.tabBarItem = item2
         
         let v3 = ViewController()
-        let item3 = JHTabBarItem()
+        let item3 = JHTabBarItem(CustomTab())
         item3.image = UIImage.init(named: "tab_mine_nor")
         item3.selectedImage = UIImage.init(named: "tab_mine_hi")
-        item3.lottieName = "03"
+//        item3.lottieName = "03"
+        item3.title = "123"
         v3.tabBarItem = item3
         
         let nav1 = UINavigationController.init(rootViewController: v1)

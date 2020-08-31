@@ -15,15 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        if #available(iOS 13, *) {
-//
-//        }else {
-//            window = UIWindow.init()
-//            window?.frame = UIScreen.main.bounds
-//            window?.makeKeyAndVisible()
-//            window?.rootViewController = Tabbar.creatTabbar()
-//            window?.backgroundColor = .white
-//        }
+        if #available(iOS 13, *) {
+
+        }else {
+            window = UIWindow.init()
+            window?.frame = UIScreen.main.bounds
+            window?.makeKeyAndVisible()
+            window?.rootViewController = Tabbar.creatTabbar()
+            window?.backgroundColor = .white
+        }
         return true
     }
 
