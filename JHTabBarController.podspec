@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.dependency 'SnapKit'
  
   s.subspec 'Core' do |ss|
-      ss.source_files = 'JHTabBarController/JHTabBarController/Class/**/*.swift' 
+      ss.source_files = 'Sources/**/*' 
     end
 
   s.subspec 'Lottie' do |ss| 

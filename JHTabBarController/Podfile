@@ -11,13 +11,5 @@ target 'JHTabBarController' do
 
 pod 'SwiftBrick'
 pod 'lottie-ios'
-  target 'JHTabBarControllerTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'JHTabBarControllerUITests' do
-    # Pods for testing
-  end
 
 end

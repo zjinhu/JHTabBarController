@@ -22,12 +22,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         ///**  放开这段注释会使用纯代码方式创建tabbarcontroller
         
-         let windowScene = scene as! UIWindowScene
-         window? = UIWindow.init(windowScene: windowScene)
-         window?.frame = windowScene.coordinateSpace.bounds
-         window?.makeKeyAndVisible()
-         window?.rootViewController = Tabbar.creatTabbar()
-         window?.backgroundColor = .white
+//         let windowScene = scene as! UIWindowScene
+//         window? = UIWindow.init(windowScene: windowScene)
+//         window?.frame = windowScene.coordinateSpace.bounds
+//         window?.makeKeyAndVisible()
+//         window?.rootViewController = Tabbar.creatTabbar()
+//         window?.backgroundColor = .white
 
         guard let _ = (scene as? UIWindowScene) else { return }
     }
