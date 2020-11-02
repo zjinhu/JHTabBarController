@@ -21,11 +21,10 @@
 		816D450B247FD5130092A9CB /* 01.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4506247FD5130092A9CB /* 01.json */; };
 		816D450C247FD5130092A9CB /* 04.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4507247FD5130092A9CB /* 04.json */; };
 		816D450D247FD5130092A9CB /* 03.json in Resources */ = {isa = PBXBuildFile; fileRef = 816D4508247FD5130092A9CB /* 03.json */; };
-		8184B35E24FCD4AF00C1E0A3 /* CustomTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8184B35D24FCD4AF00C1E0A3 /* CustomTab.swift */; };
 		81BDE36E2546C3B200F8130D /* JHTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE36A2546C3B200F8130D /* JHTabBarController.swift */; };
-		81BDE36F2546C3B200F8130D /* JHTabBarItemContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE36B2546C3B200F8130D /* JHTabBarItemContentView.swift */; };
-		81BDE3702546C3B200F8130D /* JHTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE36C2546C3B200F8130D /* JHTabBarItem.swift */; };
+		81BDE36F2546C3B200F8130D /* JHTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE36B2546C3B200F8130D /* JHTabBarButton.swift */; };
 		81BDE3712546C3B200F8130D /* JHTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BDE36D2546C3B200F8130D /* JHTabBar.swift */; };
+		81EBFC8F254FB1A900A0946D /* JHTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EBFC8E254FB1A900A0946D /* JHTabBarItem.swift */; };
 		81F663732484E05E00609EB2 /* Tabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F663722484E05E00609EB2 /* Tabbar.swift */; };
 		DF048F35C58620C7AE003F1D /* Pods_JHTabBarController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */; };
 /* End PBXBuildFile section */
@@ -51,11 +50,10 @@
 		816D4506247FD5130092A9CB /* 01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 01.json; sourceTree = "<group>"; };
 		816D4507247FD5130092A9CB /* 04.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 04.json; sourceTree = "<group>"; };
 		816D4508247FD5130092A9CB /* 03.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 03.json; sourceTree = "<group>"; };
-		8184B35D24FCD4AF00C1E0A3 /* CustomTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTab.swift; sourceTree = "<group>"; };
 		81BDE36A2546C3B200F8130D /* JHTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTabBarController.swift; sourceTree = "<group>"; };
-		81BDE36B2546C3B200F8130D /* JHTabBarItemContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTabBarItemContentView.swift; sourceTree = "<group>"; };
-		81BDE36C2546C3B200F8130D /* JHTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTabBarItem.swift; sourceTree = "<group>"; };
+		81BDE36B2546C3B200F8130D /* JHTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTabBarButton.swift; sourceTree = "<group>"; };
 		81BDE36D2546C3B200F8130D /* JHTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTabBar.swift; sourceTree = "<group>"; };
+		81EBFC8E254FB1A900A0946D /* JHTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JHTabBarItem.swift; sourceTree = "<group>"; };
 		81F663722484E05E00609EB2 /* Tabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabbar.swift; sourceTree = "<group>"; };
 		9EAB6B5E87F498FD112530D6 /* Pods_JHTabBarController_JHTabBarControllerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarController_JHTabBarControllerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A973401AA7D39C29B3BDC3E3 /* Pods_JHTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JHTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +113,6 @@
 				816D44C7247FC4A40092A9CB /* SceneDelegate.swift */,
 				816D44C9247FC4A40092A9CB /* ViewController.swift */,
 				81F663722484E05E00609EB2 /* Tabbar.swift */,
-				8184B35D24FCD4AF00C1E0A3 /* CustomTab.swift */,
 				816D44FE247FD50C0092A9CB /* tab_home_animate.json */,
 				816D44FD247FD50C0092A9CB /* tab_me_animate.json */,
 				816D44FC247FD50B0092A9CB /* tab_message_animate.json */,
@@ -136,9 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				81BDE36A2546C3B200F8130D /* JHTabBarController.swift */,
-				81BDE36B2546C3B200F8130D /* JHTabBarItemContentView.swift */,
-				81BDE36C2546C3B200F8130D /* JHTabBarItem.swift */,
 				81BDE36D2546C3B200F8130D /* JHTabBar.swift */,
+				81EBFC8E254FB1A900A0946D /* JHTabBarItem.swift */,
+				81BDE36B2546C3B200F8130D /* JHTabBarButton.swift */,
 			);
 			name = JHTabBarController;
 			path = ../../Sources/JHTabBarController;
@@ -279,13 +276,12 @@
 			files = (
 				81F663732484E05E00609EB2 /* Tabbar.swift in Sources */,
 				816D44CA247FC4A40092A9CB /* ViewController.swift in Sources */,
-				81BDE3702546C3B200F8130D /* JHTabBarItem.swift in Sources */,
 				816D44C6247FC4A40092A9CB /* AppDelegate.swift in Sources */,
 				81BDE36E2546C3B200F8130D /* JHTabBarController.swift in Sources */,
 				81BDE3712546C3B200F8130D /* JHTabBar.swift in Sources */,
-				81BDE36F2546C3B200F8130D /* JHTabBarItemContentView.swift in Sources */,
-				8184B35E24FCD4AF00C1E0A3 /* CustomTab.swift in Sources */,
+				81BDE36F2546C3B200F8130D /* JHTabBarButton.swift in Sources */,
 				816D44C8247FC4A40092A9CB /* SceneDelegate.swift in Sources */,
+				81EBFC8F254FB1A900A0946D /* JHTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

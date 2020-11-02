@@ -8,66 +8,79 @@
 
 import UIKit
 
-public class JHTabBarItem: UITabBarItem {
+fileprivate var KLottieName: Int = 0x2020_11_01
+fileprivate var kTitleFont: Int = 0x2020_11_02
+fileprivate var kTitleColor: Int = 0x2020_11_03
+fileprivate var kTitleSelectedColor: Int = 0x2020_11_04
+fileprivate var kIconColor: Int = 0x2020_11_05
+fileprivate var kIconSelectedColor: Int = 0x2020_11_06
+fileprivate var kRenderingMode: Int = 0x2020_11_09
 
-    @IBInspectable public var lottieName: String?
+extension UITabBarItem {
 
-    open var contentView: JHTabBarItemContentView?
-//    /// The font used to render the UITabBarItem text.
-    @IBInspectable public var textFontSize: CGFloat = 10
-    /// The color of the UITabBarItem text.
-    @IBInspectable public var textColor: UIColor = #colorLiteral(red: 0.5079551811, green: 0.5472556715, blue: 0.6011400746, alpha: 1)
-    @IBInspectable public var selectedTextColor: UIColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-
-    /// The tint color of the UITabBarItem icon.
-    @IBInspectable public var renderingMode: Bool = false
-    
-    @IBInspectable public var iconColor: UIColor = #colorLiteral(red: 0.5079551811, green: 0.5472556715, blue: 0.6011400746, alpha: 1)
-    @IBInspectable public var selectedIconColor: UIColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
-
-    public var bgDefaultColor: UIColor = UIColor.clear // background color
-    public var bgSelectedColor: UIColor = UIColor.clear
-    
-    /// The current badge value
-    @IBInspectable public override var badgeValue: String? {
+    @IBInspectable public var lottieName: String? {
         get {
-            return contentView?.badgeValue
+            return objc_getAssociatedObject(self, &KLottieName) as? String
         }
-        set(newValue) {
-            contentView?.badgeValue = newValue
+        set {
+            objc_setAssociatedObject(self, &KLottieName, newValue, .OBJC_ASSOCIATION_RETAIN)
+            image = UIImage()
         }
-    }
-    
-    @IBInspectable public override var badgeColor: UIColor? {
-        didSet {
-            if let _ = badgeColor {
-                contentView?.badgeColor = badgeColor
-            }
-        }
-    }
-    
-    public init(_ contentView: JHTabBarItemContentView = JHTabBarItemContentView()) {
-        super.init()
-        self.contentView = contentView
-    }
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.contentView = JHTabBarItemContentView()
-    }
-    
-    func configContentView() {
-        contentView?.renderingMode = renderingMode ? .alwaysTemplate : .alwaysOriginal
-        contentView?.image = image
-        contentView?.selectedImage = selectedImage
-        contentView?.iconColor = iconColor
-        contentView?.highlightIconColor = selectedIconColor
-        
-        contentView?.title = title
-        contentView?.textColor = textColor
-        contentView?.highlightTextColor = selectedTextColor
-        contentView?.textFontSize = textFontSize
-        contentView?.lottieName = lottieName
-        contentView?.layoutSubviews()
     }
 
+    @IBInspectable public var titleColor: UIColor? {
+        get {
+            return objc_getAssociatedObject(self, &kTitleColor) as? UIColor
+        }
+        set {
+            objc_setAssociatedObject(self, &kTitleColor, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+
+    @IBInspectable public var selectedTitleColor: UIColor? {
+        get {
+            return objc_getAssociatedObject(self, &kTitleSelectedColor) as? UIColor
+        }
+        set {
+            objc_setAssociatedObject(self, &kTitleSelectedColor, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+
+    @IBInspectable public var iconColor: UIColor? {
+        get {
+            return objc_getAssociatedObject(self, &kIconColor) as? UIColor
+        }
+        set {
+            objc_setAssociatedObject(self, &kIconColor, newValue, .OBJC_ASSOCIATION_RETAIN)
+            renderingMode = true
+        }
+    }
+
+    @IBInspectable public var selectedIconColor: UIColor? {
+        get {
+            return objc_getAssociatedObject(self, &kIconSelectedColor) as? UIColor
+        }
+        set {
+            objc_setAssociatedObject(self, &kIconSelectedColor, newValue, .OBJC_ASSOCIATION_RETAIN)
+            renderingMode = true
+        }
+    }
+
+    public var titleFontSize: CGFloat? {
+        get {
+            return objc_getAssociatedObject(self, &kTitleFont) as? CGFloat
+        }
+        set {
+            objc_setAssociatedObject(self, &kTitleFont, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
+
+    public var renderingMode: Bool? {
+        get {
+            return objc_getAssociatedObject(self, &kRenderingMode) as? Bool
+        }
+        set {
+            objc_setAssociatedObject(self, &kRenderingMode, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
+    }
 }

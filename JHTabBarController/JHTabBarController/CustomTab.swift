@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTab: JHTabBarItemContentView {
+class CustomTab: JHTabBarButton {
 
     var unSelectColor = UIColor.clear
 

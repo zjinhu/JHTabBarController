@@ -11,59 +11,45 @@ import SnapKit
 #if canImport(Lottie)
 import Lottie
 #endif
-public enum JHTabBarItemContentMode : Int {
+public enum JHTabBarButtonMode : Int {
     
     case alwaysOriginal // Always set the original image size
     
     case alwaysTemplate // Always set the image as a template image size
 }
-open class JHTabBarItemContentView: UIControl {
+open class JHTabBarButton: UIControl {
 
     /// 设置contentView的偏移
     open var insets = UIEdgeInsets.zero
 
     /// 文字颜色
-    open var textColor = UIColor(white: 0.57254902, alpha: 1.0) {
+    open var textColor : UIColor?{
         didSet {
             if !isSelected { titleLabel.textColor = textColor }
         }
     }
     
     /// 高亮时文字颜色
-    open var highlightTextColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
+    open var highlightTextColor : UIColor?{
         didSet {
             if isSelected { titleLabel.textColor = highlightIconColor }
         }
     }
     
     /// icon颜色
-    open var iconColor = UIColor(white: 0.57254902, alpha: 1.0) {
+    open var iconColor : UIColor?{
         didSet {
             if !isSelected { imageView.tintColor = iconColor }
         }
     }
     
     /// 高亮时icon颜色
-    open var highlightIconColor = UIColor(red: 0.0, green: 0.47843137, blue: 1.0, alpha: 1.0) {
+    open var highlightIconColor : UIColor?{
         didSet {
             if isSelected { imageView.tintColor = highlightIconColor }
         }
     }
-    
-    /// 背景颜色
-    open var backColor = UIColor.clear {
-        didSet {
-            if !isSelected { backgroundColor = backColor }
-        }
-    }
-    
-    /// 高亮时背景颜色
-    open var highlightBackColor = UIColor.clear {
-        didSet {
-            if isSelected { backgroundColor = highlightBackColor }
-        }
-    }
-    
+
     open var title: String? {
         didSet {
             self.titleLabel.text = title
@@ -90,7 +76,7 @@ open class JHTabBarItemContentView: UIControl {
     }
 
     /// Item content mode, default is .alwaysTemplate like UITabBarItem
-    open var itemContentMode: JHTabBarItemContentMode = .alwaysTemplate {
+    open var itemContentMode: JHTabBarButtonMode = .alwaysTemplate {
         didSet {
             self.updateDisplay()
         }
@@ -124,38 +110,7 @@ open class JHTabBarItemContentView: UIControl {
         titleLabel.textAlignment = .center
         return titleLabel
     }()
-    
-    open var badgeView: UIButton = {
-        let badgeView = UIButton.init()
-        badgeView.backgroundColor = .red
-        badgeView.titleLabel?.textColor = .white
-        badgeView.titleLabel?.textAlignment = .center
-        badgeView.titleLabel?.font = .systemFont(ofSize: 13)
-        badgeView.layer.cornerRadius = 9
-        badgeView.clipsToBounds = true
-        badgeView.isUserInteractionEnabled = false
-        return badgeView
-    }()
-    
-    /// Badge value
-    open var badgeValue: String? {
-        didSet {
-            if let _ = badgeValue {
-                badgeView.setTitle(badgeValue, for: .normal)
-                badgeView.isHidden = false
-            } else {
-                badgeView.isHidden = true
-            }
-            layoutBadge()
-        }
-    }
-    open var badgeColor: UIColor? {
-        didSet {
-            if let _ = badgeColor {
-                badgeView.backgroundColor = badgeColor
-            }
-        }
-    }
+
     
     #if canImport(Lottie)
     open var lottieView: AnimationView = {
@@ -166,10 +121,39 @@ open class JHTabBarItemContentView: UIControl {
     }()
     #endif
 
-    // MARK: -
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        
+    public init(item: UITabBarItem) {
+        super.init(frame: .zero)
+        configureSubviews()
+        defer {
+            self.item = item
+        }
+    }
+
+    var item: UITabBarItem? {
+        didSet {
+            image = item?.image
+            selectedImage = item?.selectedImage
+            title = item?.title
+
+            renderingMode = item?.renderingMode ?? false ? .alwaysTemplate : .alwaysOriginal
+
+            iconColor = item?.iconColor
+            highlightIconColor = item?.selectedIconColor
+
+            textColor = item?.titleColor
+            highlightTextColor = item?.selectedTitleColor
+            
+            if let name = item?.lottieName {
+                lottieName = name
+            }
+            
+            if let font = item?.titleFontSize  {
+                textFontSize = font
+            }
+        }
+    }
+    
+    private func configureSubviews() {
         addSubview(imageView)
         addSubview(titleLabel)
         
@@ -177,24 +161,10 @@ open class JHTabBarItemContentView: UIControl {
         addSubview(lottieView)
         #endif
 
-        addSubview(badgeView)
-        badgeView.isHidden = true
-        
         titleLabel.textColor = textColor
         imageView.tintColor = iconColor
-        backgroundColor = backColor
     }
-    
-    func layoutBadge() {
-        let textSize = badgeView.titleLabel?.sizeThatFits(CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
 
-        badgeView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(1)
-            make.centerX.equalToSuperview().offset(15)
-            make.width.equalTo(max(18.0, (textSize?.width ?? 18) + 10 ))
-            make.height.equalTo(18)
-        }
-    }
     open override func layoutSubviews() {
         super.layoutSubviews()
         
@@ -324,7 +294,6 @@ open class JHTabBarItemContentView: UIControl {
         imageView.image = (isSelected ? (selectedImage ?? image) : image)?.withRenderingMode(renderingMode)
         imageView.tintColor = isSelected ? highlightIconColor : iconColor
         titleLabel.textColor = isSelected ? highlightTextColor : textColor
-        backgroundColor = isSelected ? highlightBackColor : backColor
     }
 
     // MARK: - INTERNAL METHODS
@@ -343,6 +312,4 @@ open class JHTabBarItemContentView: UIControl {
         lottieView.stop()
         #endif
     }
-
-
 }

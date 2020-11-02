@@ -10,12 +10,15 @@ import UIKit
 import SnapKit
 public class JHTabBar: UITabBar {
 
-    private var buttons: [JHTabBarItemContentView] = []
+    private var buttons: [JHTabBarButton] = []
 
      public override var selectedItem: UITabBarItem? {
         willSet {
             guard let newValue = newValue else {
-                buttons.forEach { $0.select(false) }
+//                buttons.forEach { $0.select(false) }
+                buttons.forEach { (item) in
+                    item.select(false)
+                }
                 return
             }
             guard let index = items?.firstIndex(of: newValue),
@@ -43,10 +46,7 @@ public class JHTabBar: UITabBar {
     }()
     
     private func configure() {
-//        backgroundColor = UIColor.white
-//        isTranslucent = false
-//        barTintColor = UIColor.white
-//        tintColor = #colorLiteral(red: 0.1176470588, green: 0.1176470588, blue: 0.431372549, alpha: 1)
+
         addSubview(container)
         let bottomOffset: CGFloat
         if #available(iOS 11.0, *) {
@@ -72,16 +72,36 @@ public class JHTabBar: UITabBar {
         } else { }
     }
     
+    public override var items: [UITabBarItem]? {
+        didSet {
+            reloadViews()
+        }
+    }
+    
     public override func setItems(_ items: [UITabBarItem]?, animated: Bool) {
         super.setItems(items, animated: animated)
         reloadViews()
     }
     
     private func reloadViews() {
-        subviews.filter { String(describing: type(of: $0)) == "UITabBarButton" }.forEach { $0.removeFromSuperview() }
-        buttons.forEach { $0.removeFromSuperview() }
-        buttons = items?.map { self.button(forItem: $0 as! JHTabBarItem) } ?? []
-        var lastButton : JHTabBarItemContentView?
+//        subviews.filter { String(describing: type(of: $0)) == "UITabBarButton" }.forEach { $0.removeFromSuperview() }
+        subviews.forEach { (view) in
+            if String(describing: type(of: view)) == "UITabBarButton" {
+                view.removeFromSuperview()
+            }
+        }
+        
+        buttons.forEach { (bar) in
+            bar.removeFromSuperview()
+        }
+        
+//        buttons.forEach { $0.removeFromSuperview() }
+        buttons = items?.map({ (item) -> JHTabBarButton in
+            return self.button(forItem: item)
+        }) ?? []
+        
+//        buttons = items?.map { self.button(forItem: $0 as! JHTabBarItem) } ?? []
+        var lastButton : JHTabBarButton?
         let itemWidth = (self.bounds.width - 20) / CGFloat(buttons.count)
         buttons.forEach { (button) in
             self.container.addSubview(button)
@@ -100,19 +120,16 @@ public class JHTabBar: UITabBar {
         layoutIfNeeded()
     }
     
-    private func button(forItem item: JHTabBarItem) -> JHTabBarItemContentView {
-        guard let button = item.contentView else {
-            fatalError("items must inherit JHTabBarItem")
-        }
+    private func button(forItem item: UITabBarItem) -> JHTabBarButton {
+        let button = JHTabBarButton(item: item)
         button.addTarget(self, action: #selector(btnPressed), for: .touchUpInside)
         if selectedItem != nil && item === selectedItem {
             button.select()
         }
-        item.configContentView()
         return button
     }
     
-    @objc private func btnPressed(sender: JHTabBarItemContentView) {
+    @objc private func btnPressed(sender: JHTabBarButton) {
         guard let index = buttons.firstIndex(of: sender),
             index != NSNotFound,
             let item = items?[index] else {

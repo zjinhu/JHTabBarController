@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t4R-Bl-KxV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t4R-Bl-KxV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,6 +24,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="OE3-1n-vB4">
+            <objects>
+                <viewController id="vIA-pU-adO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K7B-Xj-CgN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uo6-kN-98q"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1v-2p-k0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1012" y="138"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Afo-Vg-iZa">
@@ -48,7 +63,7 @@
         <scene sceneID="gvc-gs-Esg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zmB-4E-UUW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="123" image="tab_chat_nor" selectedImage="tab_chat_hi" id="8eG-n6-8av" customClass="JHTabBarItem" customModule="JHTabBarController" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="123" id="8eG-n6-8av">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
                                 <color key="value" systemColor="systemGreenColor"/>
@@ -87,7 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="4gj-yo-3o0"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="tab_home_nor" selectedImage="tab_home_hi" id="Io7-d9-hXi" customClass="JHTabBarItem" customModule="JHTabBarController" customModuleProvider="target">
+                    <tabBarItem key="tabBarItem" title="Item" image="tab_home_nor" selectedImage="tab_home_hi" id="Io7-d9-hXi">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="textFontSize">
                                 <real key="value" value="10"/>
@@ -102,8 +117,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tab_chat_hi" width="24" height="24"/>
-        <image name="tab_chat_nor" width="24" height="24"/>
         <image name="tab_home_hi" width="24" height="24"/>
         <image name="tab_home_nor" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
