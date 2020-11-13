@@ -12,6 +12,9 @@ public class JHTabBar: UITabBar {
 
     private var buttons: [JHTabBarButton] = []
 
+    private var itemFrames = [CGRect]()
+    private var tabBarItems = [UIView]()
+    
      public override var selectedItem: UITabBarItem? {
         willSet {
             guard let newValue = newValue else {
@@ -46,7 +49,12 @@ public class JHTabBar: UITabBar {
     }()
     
     private func configure() {
-
+///12.0 12.1 tabbar偏移修复,系统bug
+//        if #available(iOS 12.2, *) {
+//
+//        } else {
+//            isTranslucent = false
+//        }
         addSubview(container)
         let bottomOffset: CGFloat
         if #available(iOS 11.0, *) {

@@ -8,8 +8,8 @@ target 'JHTabBarController' do
   use_frameworks!
   inhibit_all_warnings!
   # Pods for JHTabBarController
-
-pod 'SwiftBrick'
-pod 'lottie-ios'
-
+  pod 'SwiftMediator'
+  pod 'SwiftBrick'
+  pod 'lottie-ios'
+  pod 'SwiftShow/Presentation'
 end

@@ -17,7 +17,6 @@ open class JHViewController: UIViewController {
         let leftBarButton = UIButton.init(type: .custom)
         leftBarButton.imageView?.contentMode = .center
         leftBarButton.frame = CGRect.init(x: 0, y: 0, width: NavBarHeight(), height: NavBarHeight())
-        leftBarButton.addTarget(self, action:#selector(goBack) , for: .touchUpInside)
         return leftBarButton
     }()
     
@@ -28,11 +27,11 @@ open class JHViewController: UIViewController {
         return rightBarButton
     }()
     
-    /// 移除左侧导航栏返回按钮默认的返回事件
-    public func removeLeftBarButtonTarget(){
-        leftBarButton.removeTarget(self, action: #selector(goBack), for: .touchUpInside)
-    }
+    public typealias buttonClosure = () -> Void
     
+    fileprivate var leftAction: buttonClosure?
+    fileprivate var rightAction: buttonClosure?
+
     // MARK: - 布局
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +72,7 @@ open class JHViewController: UIViewController {
     /**
     *  修正左侧按钮位置
     */
-    func fixSpaceLeftBarButton(btnItem: UIBarButtonItem){
+    fileprivate func fixSpaceLeftBarButton(btnItem: UIBarButtonItem){
             leftBarButton.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -10, bottom: 0, right: 0)
             leftBarButton.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: -10, bottom: 0, right: 0)
             btnItem.imageInsets = UIEdgeInsets.init(top: 0, left: -10, bottom: 0, right: 0)
@@ -83,7 +82,7 @@ open class JHViewController: UIViewController {
     /**
     *  修正右侧按钮位置
     */
-    func fixSpaceRightBarButton(btnItem: UIBarButtonItem){
+    fileprivate func fixSpaceRightBarButton(btnItem: UIBarButtonItem){
             rightBarButton.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: -10)
             rightBarButton.contentEdgeInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: -10)
             btnItem.imageInsets = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: -10)
@@ -99,12 +98,17 @@ open class JHViewController: UIViewController {
     /// - Parameters:
     ///   - normalImage: normalImage
     ///   - highLightImage: highLightImage
-    public func addLeftBarButton(normalImage: UIImage? = nil, highLightImage: UIImage? = nil){
+    public func addLeftBarButton(normalImage: UIImage? = nil,
+                                 highLightImage: UIImage? = nil,
+                                 touchUp: buttonClosure? = nil){
         
-        comfigLeftBarButton(normalImage: normalImage, highLightImage: highLightImage)
+        configLeftBarButton(normalImage: normalImage,
+                            highLightImage: highLightImage)
         let btnItem = UIBarButtonItem.init(customView: leftBarButton)
         
         fixSpaceLeftBarButton(btnItem: btnItem)
+        
+        addLeftBarButtonAction(touchUp: touchUp)
     }
     
     /// 设置导航左侧按钮文本
@@ -114,24 +118,34 @@ open class JHViewController: UIViewController {
     ///   - highlightColor: highlightColor
     public func addLeftBarButton(text: String,
                                  normalColor: UIColor? = .textTitleColor,
-                                 highlightColor: UIColor? = .textDesColor){
+                                 highlightColor: UIColor? = .textDesColor,
+                                 touchUp: buttonClosure? = nil){
         
-        comfigLeftBarButton(text: text, normalColor: normalColor, highlightColor: highlightColor)
+        configLeftBarButton(text: text,
+                            normalColor: normalColor,
+                            highlightColor: highlightColor)
         let btnItem = UIBarButtonItem.init(customView: leftBarButton)
         
         fixSpaceLeftBarButton(btnItem: btnItem)
+        
+        addLeftBarButtonAction(touchUp: touchUp)
     }
     
     /// 设置导航右侧按钮图片
     /// - Parameters:
     ///   - normalImage: normalImage
     ///   - highLightImage: highLightImage
-    public func addRightBarButton(normalImage: UIImage? = nil, highLightImage: UIImage? = nil){
+    public func addRightBarButton(normalImage: UIImage? = nil,
+                                  highLightImage: UIImage? = nil,
+                                  touchUp: buttonClosure?){
 
-        comfigRightBarButton(normalImage: normalImage, highLightImage: highLightImage)
+        configRightBarButton(normalImage: normalImage,
+                             highLightImage: highLightImage)
         let btnItem = UIBarButtonItem.init(customView: rightBarButton)
         
         fixSpaceRightBarButton(btnItem: btnItem)
+        
+        addRightBarButtonAction(touchUp: touchUp)
     }
     
     /// 设置导航右侧按钮文本
@@ -141,12 +155,17 @@ open class JHViewController: UIViewController {
     ///   - highlightColor: highlightColor
     public func addRightBarButton(text: String,
                                   normalColor: UIColor? = .textTitleColor,
-                                  highlightColor: UIColor? = .textDesColor){
+                                  highlightColor: UIColor? = .textDesColor,
+                                  touchUp: buttonClosure?){
 
-        comfigRightBarButton(text: text, normalColor: normalColor, highlightColor: highlightColor)
+        configRightBarButton(text: text,
+                             normalColor: normalColor,
+                             highlightColor: highlightColor)
         let btnItem = UIBarButtonItem.init(customView: rightBarButton)
         
         fixSpaceRightBarButton(btnItem: btnItem)
+        
+        addRightBarButtonAction(touchUp: touchUp)
     }
     
     /// 配置左侧导航栏按钮
@@ -157,7 +176,7 @@ open class JHViewController: UIViewController {
     ///   - highlightColor: highlightColor
     ///   - normalImage: normalImage
     ///   - highLightImage: highLightImage
-    public func comfigLeftBarButton(text: String? = nil,
+    public func configLeftBarButton(text: String? = nil,
                                     font: UIFont? = Font16,
                                     normalColor: UIColor? = .textTitleColor,
                                     highlightColor: UIColor? = .textDesColor,
@@ -172,6 +191,7 @@ open class JHViewController: UIViewController {
         
         leftBarButton.setImage(normalImage, for: .normal)
         leftBarButton.setImage(highLightImage, for: .highlighted)
+
     }
     
     /// 配置右侧导航栏按钮
@@ -182,7 +202,7 @@ open class JHViewController: UIViewController {
     ///   - highlightColor: highlightColor
     ///   - normalImage: normalImage
     ///   - highLightImage: highLightImage
-    public func comfigRightBarButton(text: String? = nil,
+    public func configRightBarButton(text: String? = nil,
                                      font: UIFont? = Font16,
                                      normalColor: UIColor? = nil,
                                      highlightColor: UIColor? = nil,
@@ -197,5 +217,42 @@ open class JHViewController: UIViewController {
         
         rightBarButton.setImage(normalImage, for: .normal)
         rightBarButton.setImage(highLightImage, for: .highlighted)
+
+    }
+    
+    /// 重新添加左侧按钮的点击事件,默认是goback
+    /// - Parameter touchUp: 回调
+    public func addLeftBarButtonAction(touchUp : buttonClosure?){
+    
+        if let ges = touchUp {
+            leftBarButton.removeTarget(self, action: #selector(touchUpInSideLeftBtnAction), for: .touchUpInside)
+            leftAction = ges
+        }
+        
+        leftBarButton.addTarget(self, action: #selector(touchUpInSideLeftBtnAction), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func touchUpInSideLeftBtnAction() {
+        if let action = leftAction  {
+            action()
+        }else{
+            goBack()
+        }
+    }
+    
+    fileprivate func addRightBarButtonAction(touchUp : buttonClosure?){
+        
+        rightBarButton.removeTarget(self, action: #selector(touchUpInSideRightBtnAction), for: .touchUpInside)
+        guard let ges = touchUp else {
+            return
+        }
+        rightAction = ges
+        rightBarButton.addTarget(self, action: #selector(touchUpInSideRightBtnAction), for: .touchUpInside)
+    }
+
+    @objc fileprivate func touchUpInSideRightBtnAction() {
+        if let action = rightAction  {
+            action()
+        }
     }
 }
