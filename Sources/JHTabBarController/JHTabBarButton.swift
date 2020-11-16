@@ -135,7 +135,7 @@ open class JHTabBarButton: UIControl {
             selectedImage = item?.selectedImage
             title = item?.title
 
-            renderingMode = item?.renderingMode ?? false ? .alwaysTemplate : .alwaysOriginal
+            renderingMode = item?.imageRenderingMode ?? false ? .alwaysTemplate : .alwaysOriginal
 
             iconColor = item?.iconColor
             highlightIconColor = item?.selectedIconColor
@@ -143,13 +143,19 @@ open class JHTabBarButton: UIControl {
             textColor = item?.titleColor
             highlightTextColor = item?.selectedTitleColor
             
+            if let font = item?.titleFontSize  {
+                textFontSize = font
+            }
+            
+            #if canImport(Lottie)
             if let name = item?.lottieName {
                 lottieName = name
             }
             
-            if let font = item?.titleFontSize  {
-                textFontSize = font
+            if let speed = item?.lottieAnimationSpeed {
+                lottieView.animationSpeed = speed
             }
+            #endif
         }
     }
     

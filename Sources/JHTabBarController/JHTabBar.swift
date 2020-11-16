@@ -18,7 +18,6 @@ public class JHTabBar: UITabBar {
      public override var selectedItem: UITabBarItem? {
         willSet {
             guard let newValue = newValue else {
-//                buttons.forEach { $0.select(false) }
                 buttons.forEach { (item) in
                     item.select(false)
                 }
@@ -92,7 +91,6 @@ public class JHTabBar: UITabBar {
     }
     
     private func reloadViews() {
-//        subviews.filter { String(describing: type(of: $0)) == "UITabBarButton" }.forEach { $0.removeFromSuperview() }
         subviews.forEach { (view) in
             if String(describing: type(of: view)) == "UITabBarButton" {
                 view.removeFromSuperview()
@@ -103,12 +101,10 @@ public class JHTabBar: UITabBar {
             bar.removeFromSuperview()
         }
         
-//        buttons.forEach { $0.removeFromSuperview() }
         buttons = items?.map({ (item) -> JHTabBarButton in
             return self.button(forItem: item)
         }) ?? []
         
-//        buttons = items?.map { self.button(forItem: $0 as! JHTabBarItem) } ?? []
         var lastButton : JHTabBarButton?
         let itemWidth = (self.bounds.width - 20) / CGFloat(buttons.count)
         buttons.forEach { (button) in
