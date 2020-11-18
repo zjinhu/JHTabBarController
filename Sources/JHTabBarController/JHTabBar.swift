@@ -90,7 +90,7 @@ public class JHTabBar: UITabBar {
         reloadViews()
     }
     
-    private func reloadViews() {
+    func reloadViews() {
         subviews.forEach { (view) in
             if String(describing: type(of: view)) == "UITabBarButton" {
                 view.removeFromSuperview()
@@ -106,7 +106,7 @@ public class JHTabBar: UITabBar {
         }) ?? []
         
         var lastButton : JHTabBarButton?
-        let itemWidth = (self.bounds.width - 20) / CGFloat(buttons.count)
+        let itemWidth = (bounds.width - 20) / CGFloat(buttons.count)
         buttons.forEach { (button) in
             self.container.addSubview(button)
             button.snp.remakeConstraints { (make) in

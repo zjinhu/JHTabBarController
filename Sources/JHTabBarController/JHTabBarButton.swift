@@ -52,7 +52,7 @@ open class JHTabBarButton: UIControl {
 
     open var title: String? {
         didSet {
-            self.titleLabel.text = title
+            titleLabel.text = title
         }
     }
     
@@ -71,27 +71,27 @@ open class JHTabBarButton: UIControl {
     /// Icon imageView renderingMode, default is .alwaysTemplate like UITabBarItem
     open var renderingMode: UIImage.RenderingMode = .alwaysTemplate {
         didSet {
-            self.updateDisplay()
+            updateDisplay()
         }
     }
 
     /// Item content mode, default is .alwaysTemplate like UITabBarItem
     open var itemContentMode: JHTabBarButtonMode = .alwaysTemplate {
         didSet {
-            self.updateDisplay()
+            updateDisplay()
         }
     }
 
     /// Icon imageView's image
     open var image: UIImage? {
         didSet {
-            if !isSelected { self.updateDisplay() }
+            if !isSelected { updateDisplay() }
         }
     }
 
     open var selectedImage: UIImage? {
         didSet {
-            if isSelected { self.updateDisplay() }
+            if isSelected { updateDisplay() }
         }
     }
     

@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13, *) {
 
         }else {
-//            window = UIWindow.init()
-//            window?.frame = UIScreen.main.bounds
-//            window?.makeKeyAndVisible()
-//            window?.rootViewController = Tabbar.creatTabbar()
-//            window?.backgroundColor = .white
+            window = UIWindow.init()
+            window?.frame = UIScreen.main.bounds
+            window?.makeKeyAndVisible()
+            window?.rootViewController = Tabbar.creatTabbar()
+            window?.backgroundColor = .white
         }
         return true
     }

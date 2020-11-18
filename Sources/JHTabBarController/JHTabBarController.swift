@@ -10,6 +10,8 @@ import UIKit
 
 public class JHTabBarController: UITabBarController {
 
+    var jhTabBar = JHTabBar()
+    
     public override var selectedViewController: UIViewController? {
         willSet {
             guard let newValue = newValue else {
@@ -33,8 +35,7 @@ public class JHTabBarController: UITabBarController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        let tabBar = JHTabBar()
-        self.setValue(tabBar, forKey: "tabBar")
+        setValue(jhTabBar, forKey: "tabBar")
     }
 
     public override func viewDidAppear(_ animated: Bool) {
@@ -57,11 +58,10 @@ public class JHTabBarController: UITabBarController {
     }
 
     private func updateTabBarFrame() {
-        var tabFrame = self.tabBar.frame
+        var tabFrame = tabBar.frame
         tabFrame.size.height = barHeight
-        tabFrame.origin.y = self.view.frame.size.height - barHeight
-        self.tabBar.frame = tabFrame
-        tabBar.setNeedsLayout()
+        tabFrame.origin.y = view.frame.size.height - barHeight
+        tabBar.frame = tabFrame
     }
 
     public override func viewWillLayoutSubviews() {
@@ -69,6 +69,11 @@ public class JHTabBarController: UITabBarController {
         updateTabBarFrame()
     }
 
+    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        updateTabBarFrame()
+        jhTabBar.reloadViews()
+    }
+    
     public override func viewSafeAreaInsetsDidChange() {
         if #available(iOS 11.0, *) {
             super.viewSafeAreaInsetsDidChange()
