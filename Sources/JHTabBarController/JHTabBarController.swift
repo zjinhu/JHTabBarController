@@ -8,14 +8,13 @@
 
 import UIKit
 
-public typealias JHTabBarControllerDidSelectHandler = ((_ viewController: UIViewController, _ index: Int) -> (Void))
-
 
 public class JHTabBarController: UITabBarController {
+    public typealias DidSelectHandler = ((_ index: Int) -> Void)
 
-    var jhTabBar = JHTabBar()
-    
-    public var didSelectHandler: JHTabBarControllerDidSelectHandler?
+    public var jhTabBar = JHTabBar()
+
+    fileprivate var didSelectHandler: DidSelectHandler?
     
     public override var selectedViewController: UIViewController? {
         willSet {
@@ -93,11 +92,11 @@ public class JHTabBarController: UITabBarController {
         if let controller = viewControllers?[idx] {
             selectedIndex = idx
             delegate?.tabBarController?(self, didSelect: controller)
-            didSelectHandler?(controller, idx)
+            didSelectHandler?(idx)
         }
     }
     
-    public func tabBarDidSelect(_ block: JHTabBarControllerDidSelectHandler?){
+    public func didSelect(_ block: DidSelectHandler?){
         didSelectHandler = block
     }
 }
