@@ -46,7 +46,9 @@ class Tabbar {
         let tab = JHTabBarController()
         tab.viewControllers = [nav1,nav2,nav3] 
         tab.selectedIndex = 2
-        
+        tab.tabBarDidSelect { (vc, index) -> (Void) in
+            print("\(index)")
+        }
         return tab
     }
 }
