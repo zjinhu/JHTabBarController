@@ -99,4 +99,17 @@ public class JHTabBarController: UITabBarController {
     public func didSelect(_ block: DidSelectHandler?){
         didSelectHandler = block
     }
+    
+    public func hideTopLine(){
+        if #available(iOS 13.0, *) {
+            let appear =  UITabBarAppearance()
+            appear.shadowImage = UIImage()
+            appear.backgroundImage = UIImage()
+            appear.configureWithTransparentBackground()
+            tabBar.standardAppearance = appear
+        } else {
+            tabBar.shadowImage = UIImage()
+            tabBar.backgroundImage = UIImage()
+        }
+    }
 }

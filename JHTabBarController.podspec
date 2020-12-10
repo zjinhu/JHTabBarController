@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JHTabBarController'
-  s.version          = '0.7.0'
+  s.version          = '0.8.0'
   s.summary          = 'JHTabBarController.'
  
   s.description      = <<-DESC
