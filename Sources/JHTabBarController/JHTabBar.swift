@@ -22,6 +22,8 @@ public class JHTabBar: UITabBar {
 //        return circle
 //    }()
     
+    public var imageView = UIImageView()
+    
     public override var selectedItem: UITabBarItem? {
         willSet {
             guard let newValue = newValue else {
@@ -56,6 +58,12 @@ public class JHTabBar: UITabBar {
     }()
     
     private func configure() {
+        
+        addSubview(imageView) 
+        imageView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        
         ///12.0 12.1 tabbar偏移修复,系统bug
         //        if #available(iOS 12.2, *) {
         //
@@ -75,6 +83,7 @@ public class JHTabBar: UITabBar {
             make.right.equalToSuperview().offset(-10)
             make.bottom.equalToSuperview().offset(-bottomOffset)
         }
+
     }
     
     override public func safeAreaInsetsDidChange() {

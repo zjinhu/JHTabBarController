@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 public class JHTabBarController: UITabBarController {
     public typealias DidSelectHandler = ((_ index: Int) -> Void)
 
