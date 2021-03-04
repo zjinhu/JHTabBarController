@@ -1,6 +1,5 @@
 # JHTabBarController
 支持Lottie动画的UITabBarController。
-支持XIB属性，支持纯代码创建。
 
 lottie imageView同时存在如果有Lottie仓库会用Lottie隐藏ImageView，如果工程没Lottie仓库则只展示imageView
 只有title会居中展示
