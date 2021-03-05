@@ -9,13 +9,13 @@
 import UIKit
 
 public class JHTabBarController: UITabBarController {
-    
+    /// 点击回调返回点击第几个
     public typealias DidSelectHandler = ((_ index: Int) -> Void)
-
+    /// tabbar属性,可修改
     public var jhTabBar = JHTabBar()
 
     fileprivate var didSelectHandler: DidSelectHandler?
-    
+    /// 选中VC
     public override var selectedViewController: UIViewController? {
         willSet {
             guard let newValue = newValue else {
@@ -27,7 +27,7 @@ public class JHTabBarController: UITabBarController {
             tabBar.select(itemAt: index, animated: false)
         }
     }
-
+    /// 选中第几个
     public override var selectedIndex: Int {
         willSet {
             guard let tabBar = tabBar as? JHTabBar else {
@@ -100,6 +100,7 @@ public class JHTabBarController: UITabBarController {
         didSelectHandler = block
     }
     
+    /// 隐藏分隔线
     public func hideTopLine(){
         if #available(iOS 13.0, *) {
             let appear =  UITabBarAppearance()

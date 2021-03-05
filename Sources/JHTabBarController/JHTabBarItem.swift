@@ -16,6 +16,7 @@ fileprivate var kIconColor: Int = 0x2020_11_05
 fileprivate var kIconSelectedColor: Int = 0x2020_11_06
 fileprivate var kRenderingMode: Int = 0x2020_11_09
 fileprivate var KLottieSpeed: Int = 0x2020_11_10
+
 extension UITabBarItem {
     
     ///lottie动画文件名称,可不添加后最

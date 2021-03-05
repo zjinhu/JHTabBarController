@@ -18,17 +18,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor.random
         tabBarItem.badgeValue = "9"
         
-        UIButton.snpButton(supView: view, backColor: .orange, title: "123") { (_) in
-//            let vc = PViewController()
-//            SwiftMediator.shared.present(vc, needNav: true, modelStyle: 0)
-            
-//            let vc = PViewController()
-//            var component = PresentedViewComponent(contentSize: CGSize(width: ScreenWidth, height: 300))
-//            component.destination = .bottomBaseline
-//            component.presentTransitionType = .translation(origin: .bottomOutOfLine)
-//            vc.presentedViewComponent = component
-//            self.presentViewController(vc)
-            
+        UIButton.snpButton(supView: view, backColor: .orange, title: "点击跳转页面") { (_) in
             SwiftMediator.shared.push("PViewController")
         } snapKitMaker: { (m) in
             m.center.equalToSuperview()

@@ -11,12 +11,13 @@ import SnapKit
 #if canImport(Lottie)
 import Lottie
 #endif
+
 public enum JHTabBarButtonMode : Int {
     
     case alwaysOriginal // Always set the original image size
-    
     case alwaysTemplate // Always set the image as a template image size
 }
+
 open class JHTabBarButton: UIControl {
 
     /// 设置contentView的偏移
@@ -49,13 +50,15 @@ open class JHTabBarButton: UIControl {
             if isSelected { imageView.tintColor = highlightIconColor }
         }
     }
-
+    
+    /// 标题
     open var title: String? {
         didSet {
             titleLabel.text = title
         }
     }
     
+    /// lottie名,可不带后缀
     open var lottieName: String? {
         didSet {
             #if canImport(Lottie)
@@ -88,7 +91,8 @@ open class JHTabBarButton: UIControl {
             if !isSelected { updateDisplay() }
         }
     }
-
+    
+    /// 选中时icon
     open var selectedImage: UIImage? {
         didSet {
             if isSelected { updateDisplay() }
@@ -97,12 +101,14 @@ open class JHTabBarButton: UIControl {
     
     open var textFontSize: CGFloat = UIScreen.main.scale == 3.0 ? 13.0 : 12.0
     
+    /// icon容器
     open var imageView: UIImageView = {
         let imageView = UIImageView.init()
         imageView.backgroundColor = .clear
         return imageView
     }()
     
+    /// 标题容器
     open var titleLabel: UILabel = {
         let titleLabel = UILabel.init()
         titleLabel.backgroundColor = .clear
@@ -188,6 +194,7 @@ open class JHTabBarButton: UIControl {
         titleLabel.font = .systemFont(ofSize: textFontSize)
         
         if let t = title, t.count > 0, image != nil, let l = lottieName, l.count > 0{
+            
             imageView.snp.remakeConstraints { (make) in
                 if isLandscape {
                     make.centerX.centerY.equalToSuperview()
@@ -213,7 +220,9 @@ open class JHTabBarButton: UIControl {
                 make.edges.equalTo(imageView)
             }
             #endif
+            
         }else if let t = title, t.count > 0, image != nil{
+            
             imageView.snp.remakeConstraints { (make) in
                 if isLandscape {
                     make.centerX.centerY.equalToSuperview()
@@ -233,7 +242,9 @@ open class JHTabBarButton: UIControl {
                     make.centerX.equalToSuperview()
                 }
             }
+            
         }else if let l = lottieName, l.count > 0, let t = title, t.count > 0{
+            
             #if canImport(Lottie)
             titleLabel.font = .systemFont(ofSize: textFontSize)
             lottieView.snp.remakeConstraints { (make) in
@@ -260,7 +271,9 @@ open class JHTabBarButton: UIControl {
                 make.center.equalToSuperview()
             }
             #endif
+            
         }else if let l = lottieName, l.count > 0, image != nil{
+            
             #if canImport(Lottie)
             lottieView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
@@ -272,22 +285,29 @@ open class JHTabBarButton: UIControl {
                 make.width.height.equalTo(28)
             }
             #endif
+            
         }else if let l = lottieName, l.count > 0{
+            
             #if canImport(Lottie)
             lottieView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
                 make.width.height.equalTo(28)
             }
             #endif
+            
         }else if image != nil{
+            
             imageView.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
                 make.width.height.equalTo(28)
             }
+            
         }else if let t = title, t.count > 0{
+            
             titleLabel.snp.remakeConstraints { (make) in
                 make.center.equalToSuperview()
             }
+            
         }
 
     }

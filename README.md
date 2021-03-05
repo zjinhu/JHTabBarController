@@ -1,25 +1,18 @@
-# JHTabBarController
-支持Lottie动画的UITabBarController。
-
-lottie imageView同时存在如果有Lottie仓库会用Lottie隐藏ImageView，如果工程没Lottie仓库则只展示imageView
-只有title会居中展示
-只有image或者只有lottie都会居中展示
-
-不喜欢默认样式可以重写 JHTabBarItemContentView
 
 
+支持Lottie动画的UITabBarController。支持横竖屏排版动态变化，支持lottie 和 image混合的Tabbar。
 
-## 安装
-```
-支持ios11以上版本，swift5支持
-默认
-pod 'JHTabBarController'
-使用Lottie
-pod 'JHTabBarController/Lottie'
-```
+### 注意事项
+
+1. lottie和image同时存在时，如果有 import Lottie仓库会用Lottie隐藏Image（lottie为第一响应序列）
+2. 只有title时会居中展示（image为nil）
+3. 只有image或者只有lottie都会居中展示（title为nil）
+
+### 参数
+
 ## 使用
 
-```
+```swift
 var image  					默认icon
 var selectedImage  			选中状态icon
 var title  					标题
@@ -33,35 +26,38 @@ var selectedIconColor			icon使用自定义颜色  选中颜色
 
 ```
 
+### 使用
+
 纯代码创建：
-```
+
+```swift
         let v1 = ViewController()
         let item1 = UITabBarItem()
         item1.image = UIImage.init(named: "tab_chat_nor")
         item1.selectedImage = UIImage.init(named: "tab_chat_hi")
         item1.title = "123"
         v1.tabBarItem = item1
+        
         let v2 = ViewController()
         let item2 = UITabBarItem()
         item2.image = UIImage.init(named: "tab_home_nor")
         item2.selectedImage = UIImage.init(named: "tab_home_hi")
         v2.tabBarItem = item2
+        
         let v3 = ViewController()
         let item3 = UITabBarItem()
         item3.image = UIImage.init(named: "tab_mine_nor")
         item3.selectedImage = UIImage.init(named: "tab_mine_hi")
         item3.lottieName = "03"
         v3.tabBarItem = item3
+        
         let nav1 = UINavigationController.init(rootViewController: v1)
         let nav2 = UINavigationController.init(rootViewController: v2)
         let nav3 = UINavigationController.init(rootViewController: v3)
         
         let tab = JHTabBarController()
-        
         tab.viewControllers = [nav1,nav2,nav3]
-
-设置默认选中第几个form 程序启动默认选中第零个
-        tab.setSelectIndex(from: 0, to: 2)
+        tab.selectedIndex = 0
         
         let windowScene = scene as! UIWindowScene
         window? = UIWindow.init(windowScene: windowScene)
@@ -71,27 +67,33 @@ var selectedIconColor			icon使用自定义颜色  选中颜色
         window?.backgroundColor = .white
 ```
 
-纯代码参见Demo **SceneDelegate**  放开注释运行即可
- Storyboard用法参见**Main.storyboardstorstor**
+Storyboard创建：
 
-<video id="video">
-<source id="mp4" src="https://github.com/jackiehu/JHTabBarController/blob/master/1.mp4" type="video/mp4">
-</video>
+![](xib1.png)
 
-  
+![](xib2.png)
 
+![](xib3.png)
 
+![](xib4.png)
 
-
+具体用法详见Demo
 
 ### 安装
 
 #### cocoapods导入
 
-`pod 'Swift_Form'`
+```
+支持ios11以上版本，swift5支持
+默认
+pod 'JHTabBarController'
+使用Lottie
+pod 'JHTabBarController/Lottie'
+```
 
 #### SPM导入
 
-`https://github.com/jackiehu/SwiftyForm`
+`https://github.com/jackiehu/JHTabBarController`
 
 #### 手动导入
+
