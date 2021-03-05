@@ -74,7 +74,13 @@ var selectedIconColor			icon使用自定义颜色  选中颜色
 纯代码参见Demo **SceneDelegate**  放开注释运行即可
  Storyboard用法参见**Main.storyboardstorstor**
 
+<video id="video">
 <source id="mp4" src="https://github.com/jackiehu/JHTabBarController/blob/master/1.mp4" type="video/mp4">
+</video>
+
+  
+
+
 
 
 
