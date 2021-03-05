@@ -72,6 +72,19 @@ var selectedIconColor			icon使用自定义颜色  选中颜色
         window?.backgroundColor = .white
 ```
 
-
 纯代码参见Demo **SceneDelegate**  放开注释运行即可
  Storyboard用法参见**Main.storyboardstorstor**
+
+<source id="mp4" src="1.mp4" type="video/mp4">
+
+### 安装
+
+#### cocoapods导入
+
+`pod 'Swift_Form'`
+
+#### SPM导入
+
+`https://github.com/jackiehu/SwiftyForm`
+
+#### 手动导入
