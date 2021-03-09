@@ -69,13 +69,11 @@ var selectedIconColor			icon使用自定义颜色  选中颜色
 
 Storyboard创建：
 
-![](xib1.png)
+| ![](xib1.png) | ![](xib2.png) |
+| ------------- | ------------- |
+| ![](xib3.png) | ![](xib4.png) |
 
-![](xib2.png)
 
-![](xib3.png)
-
-![](xib4.png)
 
 具体用法详见Demo
 
