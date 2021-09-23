@@ -26,6 +26,8 @@ class Tabbar {
         item2.iconColor = .red
         item2.selectedIconColor = .green
         item2.title = "123"
+        item2.titleColor = .black
+        item2.selectedTitleColor = .green
         v2.tabBarItem = item2
         
         let v3 = ViewController()
@@ -44,6 +46,9 @@ class Tabbar {
         let nav3 = UINavigationController.init(rootViewController: v3)
         
         let tab = JHTabBarController()
+//        tab.hideTopLine()
+        tab.setTabbarBackColor(.yellow)
+//        tab.setTabbarBackImage(UIImage(named: "bg_Image"))
         tab.viewControllers = [nav1,nav2,nav3] 
         tab.selectedIndex = 2
         tab.didSelect { (inx) in

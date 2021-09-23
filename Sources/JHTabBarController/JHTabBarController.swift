@@ -100,17 +100,30 @@ public class JHTabBarController: UITabBarController {
         didSelectHandler = block
     }
     
+    @available(iOS 13.0, *)
+    lazy var tabBarAppear: UITabBarAppearance = {
+        let appear =  UITabBarAppearance()
+        return appear
+    }()
+    
     /// 隐藏分隔线
     public func hideTopLine(){
         if #available(iOS 13.0, *) {
-            let appear =  UITabBarAppearance()
-            appear.shadowImage = UIImage()
-            appear.backgroundImage = UIImage()
-            appear.configureWithTransparentBackground()
-            tabBar.standardAppearance = appear
+            tabBarAppear.shadowImage = UIImage()
+            tabBarAppear.backgroundImage = UIImage()
+            tabBarAppear.configureWithTransparentBackground()
+            tabBar.standardAppearance = tabBarAppear
         } else {
             tabBar.shadowImage = UIImage()
             tabBar.backgroundImage = UIImage()
         }
+    }
+    ///设置tabbar背景颜色
+    public func setTabbarBackColor(_ color: UIColor = .white){
+        jhTabBar.imageView.backgroundColor = color
+    }
+    ///设置tabbar背景图片
+    public func setTabbarBackImage(_ image: UIImage?){
+        jhTabBar.imageView.image = image
     }
 }
