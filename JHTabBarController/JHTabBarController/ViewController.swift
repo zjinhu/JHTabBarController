@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .random
         UIButton.snpButton(supView: view, backColor: .orange, title: "点击跳转页面") { (_) in
             SwiftMediator.shared.push("PViewController")
         } snapKitMaker: { (m) in

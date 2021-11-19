@@ -21,7 +21,7 @@ public class JHTabBar: UITabBar {
 //        addSubview(circle)
 //        return circle
 //    }()
-    
+
     public var imageView = UIImageView()
     
     public override var selectedItem: UITabBarItem? {
@@ -45,7 +45,7 @@ public class JHTabBar: UITabBar {
         super.init(frame: frame)
         configure()
     }
-    
+
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         configure()

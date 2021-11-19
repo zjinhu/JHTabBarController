@@ -16,8 +16,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 
-        ///**  放开这段注释会使用纯代码方式创建tabbarcontroller
-        
          let windowScene = scene as! UIWindowScene
          window? = UIWindow.init(windowScene: windowScene)
          window?.frame = windowScene.coordinateSpace.bounds
